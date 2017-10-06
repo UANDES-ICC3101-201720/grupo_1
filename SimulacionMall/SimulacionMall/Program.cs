@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,7 @@ namespace SimulacionMall
     class Program
     {
         static void Main(string[] args)
-        { //Creacion del MALL, falta el DINERO INICIAL
+        { //Creacion del MALL
             Console.WriteLine("Bienvenido a Mall Simulator");
             Console.WriteLine("Ingrese nombre del mall");
             string nombremall = Console.ReadLine();
@@ -25,14 +25,14 @@ namespace SimulacionMall
             int NumPiso = Convert.ToInt32(Console.ReadLine());
             List<Piso> pisosNoSubt = new List<Piso>();
             List<Piso> pisosSubt = new List<Piso>();
-            Piso.CrearPiso(NumPiso,pisosNoSubt,pisosSubt);
+            Piso.CrearPiso(NumPiso, pisosNoSubt, pisosSubt);
 
 
             //Creacion Negocios
             foreach (Piso p in pisosNoSubt)
             {
                 List<Negocio> negocios = new List<Negocio>();
-                Negocio.CrearNegocio(p,negocios);
+                Negocio.CrearNegocio(p, negocios);
             }
             Console.ReadLine();
         }
