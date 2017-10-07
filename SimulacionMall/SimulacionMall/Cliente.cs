@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimulacionMall
 {
+    public class Cliente
     {
 
         string nombreCliente;
