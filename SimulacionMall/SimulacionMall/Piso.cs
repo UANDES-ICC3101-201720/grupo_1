@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimulacionMall
 {
-    public class Piso
+     public class Piso
     {
         public int numeroPiso;
         public int areaPiso;
@@ -22,26 +22,29 @@ namespace SimulacionMall
         public static void CrearPiso(int numPisos, List<Piso> pisosNoSubt, List<Piso> pisosSubt)
         {
             int pUp = 0;
-            int p = 0;
+            int p = 1;
             int pDown = 0;
             while (p <= numPisos)
             {
+                p += 1;
                 Console.WriteLine("Si desea crear un piso sobre nivel ingrese 1, si desea uno subterraneo ingrese 2");
                 int x = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Ingrese el area de este piso en metros cuadrados");
                 int y = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingrese el numero de Locales para este piso: ");
-                int z = Convert.ToInt32(Console.ReadLine());
                 if (x == 2)
                 {
+                    Console.WriteLine("Ingrese el numero Estacionamientos");
+                    int z = Convert.ToInt32(Console.ReadLine());
                     pDown = pDown - 1;
-                    Piso piso = new Piso(pDown, y,z);
+                    Piso piso = new Piso(pDown, y, z);
                     pisosSubt.Add(piso);
                 }
                 else if (x == 1)
                 {
+                    Console.WriteLine("Ingrese el numero de de Locales para este piso: ");
+                    int z = Convert.ToInt32(Console.ReadLine());
                     pUp = pUp + 1;
-                    Piso piso = new Piso(pUp, y,z);
+                    Piso piso = new Piso(pUp, y, z);
                     pisosNoSubt.Add(piso);
                 }
             }
