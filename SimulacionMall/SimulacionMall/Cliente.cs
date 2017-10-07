@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SimulacionMall
 {
-    class Cliente
     {
+
         string nombreCliente;
         string rutCliente;
         int dinero;
@@ -16,7 +16,7 @@ namespace SimulacionMall
         List<Negocio> plandeCompra;
         List<Negocio> visitados;
 
-        public Cliente(string nombreCliente, string rutCliente, int dinero, string formaDeLlegada)
+        public Cliente(string nombreCliente, string rutCliente, int dinero, string formaDeLlegada, int piso)
         {
             this.nombreCliente = nombreCliente;
             this.rutCliente = rutCliente;
@@ -25,21 +25,16 @@ namespace SimulacionMall
             this.piso = piso;
             List<Negocio> planDeCompra = new List<Negocio>();
             List<Negocio> visitados = new List<Negocio>();
-        } 
+        }
         public void visitarTiendas(Cliente c)
         {
-            foreach(Negocio negocio in c.plandeCompra)
+            foreach (Negocio n in c.plandeCompra)
             {
-                if (c.visitados.Contains(negocio) = false)
+                if (!c.visitados.Contains(n))
                 {
-                    c.visitados.Add(negocio);
-                    
-
+                    c.visitados.Add(n);
                 }
             }
         }
-
-        
-            
     }
 }
