@@ -10,6 +10,7 @@ namespace SimulacionMall
     {
         static void Main(string[] args)
         { //Creacion del MALL
+            int dia = 1;
             Console.WriteLine("Bienvenido a Mall Simulator");
             Console.WriteLine("Ingrese nombre del mall");
             string nombremall = Console.ReadLine();
@@ -35,6 +36,41 @@ namespace SimulacionMall
                 Negocio.CrearNegocio(p, negocios);
             }
             Console.ReadLine();
+
+            //Simulacion
+
+            Console.WriteLine("Simulacion del dia" + dia);
+            //Cantidad de clientes recepcionados y ganancias, promedio y del dia
+            
+            int clientesdeldia = 0;
+            int clientesTotales = 0;
+            int gananciadeldia=0;
+            int gananciaTotal=0;
+
+            foreach (Negocio negocio in negocios)
+            {
+                clientesdeldia = clientesdeldia + negocio.clientesDelDia;
+                gananciadeldia = gananciadeldia + negocio.ganancias;
+            }
+            clientesTotales = clientesTotales + clientesdeldia;
+            gananciaTotal = gananciaTotal + gananciadeldia;
+
+            Console.WriteLine("La cantidad de clientes del dia " + dia + "fue de " + clientesdeldia);
+            Console.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + "es de" + (clientesTotales / dia));
+
+            Console.WriteLine("La ganancia del dia " + dia + "fue de " + gananciadeldia);
+            Console.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
+
+
+
+            
+
+
+
+            
+
+
+
         }
     }
 }
