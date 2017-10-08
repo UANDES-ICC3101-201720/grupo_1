@@ -11,7 +11,7 @@ namespace SimulacionMall
         public int numeroClientes;
         public int piso;
         public int precioArriendo;
-        public int ganancias;
+        public double ganancias;
         public int horaApertura;
         public int horaCierre;
         public int stock;
@@ -104,12 +104,14 @@ namespace SimulacionMall
                         n.cat = "Juego";
                     }
                     negocios.Add(n);
+                    
                     areaTotal += areaNegocio;
                 }
                 else
                 {
                     areaTotal += areaNegocio;
                 }
+                
             }
         }
         public static void CalcularClientes(Negocio n)
@@ -120,13 +122,13 @@ namespace SimulacionMall
             n.clientesDelDia = rn.Next(0, cMAX);
             n.clientesDiaAnterior = n.clientesDelDia;
         }
-        public static double CalcularGanancia(Negocio n)
+        public static void CalcularGanancia(Negocio n)
         {
             Random rn = new Random();
             int ventaPromedio = rn.Next(n.precioMin, n.precioMax);
             int costoArriendo = n.precioArriendo * n.areaNegocio;
             double ganancia = ventaPromedio * n.clientesDelDia - (n.numEmpleados + costoArriendo);
-            return ganancia;
+            n.ganancias = ganancia;
         }
     }
 }
