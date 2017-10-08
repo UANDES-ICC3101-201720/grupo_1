@@ -27,39 +27,65 @@ namespace SimulacionMall
             List<Piso> pisosNoSubt = new List<Piso>();
             List<Piso> pisosSubt = new List<Piso>();
             Piso.CrearPiso(NumPiso, pisosNoSubt, pisosSubt);
+            List<Negocio> listadenegociostotal = new List<Negocio>();
 
 
             //Creacion Negocios
+            
             foreach (Piso p in pisosNoSubt)
             {
                 List<Negocio> negocios = new List<Negocio>();
-                Negocio.CrearNegocio(p, negocios);
+                Negocio.CrearNegocio(p, negocios);             
+                foreach (Negocio n in negocios)
+                {
+                    listadenegociostotal.Add(n);
+                }
+                
             }
+            
             Console.ReadLine();
 
             //Simulacion
 
-            Console.WriteLine("Simulacion del dia" + dia);
-            //Cantidad de clientes recepcionados y ganancias, promedio y del dia
             
-            int clientesdeldia = 0;
+            
+
+
             int clientesTotales = 0;
-            int gananciadeldia=0;
-            int gananciaTotal=0;
-
-            foreach (Negocio negocio in negocios)
+            double gananciaTotal = 0;
+            while (dia <= 10)
             {
-                clientesdeldia = clientesdeldia + negocio.clientesDelDia;
-                gananciadeldia = gananciadeldia + negocio.ganancias;
+                Console.WriteLine("Simulacion del dia" + dia);
+                //Cantidad de clientes recepcionados y ganancias, promedio y del dia
+
+                int clientesdeldia = 0;                
+                double gananciadeldia = 0;
+
+                foreach (Negocio n in listadenegociostotal)
+                {
+                    Negocio.CalcularClientes(n);
+                    Negocio.CalcularGanancia(n);
+                    clientesdeldia = clientesdeldia + n.clientesDelDia;
+                    gananciadeldia = gananciadeldia + n.ganancias;
+                }
+
+                clientesTotales = clientesTotales + clientesdeldia;
+                gananciaTotal = gananciaTotal + gananciadeldia;
+
+                Console.WriteLine("La cantidad de clientes del dia " + dia + "fue de " + clientesdeldia);
+                Console.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + "es de" + (clientesTotales / dia));
+
+                Console.WriteLine("La ganancia del dia " + dia + "fue de " + gananciadeldia);
+                Console.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
+
+
+                //Mayor y menor cantidad de ganancia y clientes
+                
+                dia = dia + 1;
+
             }
-            clientesTotales = clientesTotales + clientesdeldia;
-            gananciaTotal = gananciaTotal + gananciadeldia;
+            Console.ReadLine();
 
-            Console.WriteLine("La cantidad de clientes del dia " + dia + "fue de " + clientesdeldia);
-            Console.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + "es de" + (clientesTotales / dia));
-
-            Console.WriteLine("La ganancia del dia " + dia + "fue de " + gananciadeldia);
-            Console.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
 
 
 
