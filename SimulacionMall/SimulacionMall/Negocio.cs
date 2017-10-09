@@ -23,6 +23,9 @@ namespace SimulacionMall
         public int clientesDelDia;
         public string cat;
         public string subcat;
+        public double gananciatotal = 0;
+        public int clientesTotales = 0;
+        
 
         public Negocio(string nombreNegocio, int areaNegocio, int piso, int precioArriendo, int precioMin, int precioMax, int stock, int numEmpleados, int clientesDiaAnterior, int clientesDelDia, string cat, string subcat)
         {
