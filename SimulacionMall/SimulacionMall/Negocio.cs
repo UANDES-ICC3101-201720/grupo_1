@@ -122,7 +122,7 @@ namespace SimulacionMall
             Random rn = new Random();
             int promedioPrecios = (n.precioMin + n.precioMax) / 2;
             int cMAX = Convert.ToInt32(n.clientesDiaAnterior + (n.areaNegocio / 10.0) * (((Math.Max((100 - promedioPrecios), 0)) / 100.0) * n.numEmpleados));
-            n.clientesDelDia = rn.Next(0, cMAX);
+            n.clientesDelDia = rn.Next(1, cMAX);
             n.clientesDiaAnterior = n.clientesDelDia;
         }
         public static void CalcularGanancia(Negocio n)
@@ -130,7 +130,7 @@ namespace SimulacionMall
             Random rn = new Random();
             int ventaPromedio = rn.Next(n.precioMin, n.precioMax);
             int costoArriendo = n.precioArriendo * n.areaNegocio;
-            double ganancia = ventaPromedio * n.clientesDelDia - (n.numEmpleados + costoArriendo);
+            double ganancia = (ventaPromedio * n.clientesDelDia) - (n.numEmpleados + costoArriendo);
             n.ganancias = ganancia;
         }
     }
