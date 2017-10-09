@@ -65,8 +65,45 @@ namespace SimulacionMall
                 {
                     Negocio.CalcularClientes(n);
                     Negocio.CalcularGanancia(n);
+                    n.gananciatotal = n.gananciatotal + n.ganancias; //Ganancias seria las ganancias de cada dia del negocio
+                    n.clientesTotales = n.clientesTotales + n.clientesDelDia; 
                     clientesdeldia = clientesdeldia + n.clientesDelDia;
-                    gananciadeldia = gananciadeldia + n.ganancias;
+                    gananciadeldia = gananciadeldia + n.ganancias;                   
+                    
+                }
+
+                double gananciamaxima = -9999999999999999;
+                double gananciaminima = 9999999999999;
+                int clientesmaximos = 0;
+                int clientesminimos = 999999999;
+                string nombredelatiendacmax = "";
+                string nombredelatiendacmin = "";
+                string nombredelatiendagmax = "";
+                string nombredelatiendagmin = "";
+
+                //Locales con mayor y menor cantidad de clientes atendidos
+                foreach (Negocio n in listadenegociostotal)
+                {
+                    if (n.clientesDelDia > clientesmaximos)
+                    {
+                        clientesmaximos = n.clientesDelDia;
+                        nombredelatiendacmax = n.nombreNegocio;
+                    }
+                    if (n.clientesDelDia < clientesminimos)
+                    {
+                        clientesminimos = n.clientesDelDia;
+                        nombredelatiendacmin = n.nombreNegocio;                        
+                    }
+                    if (n.ganancias > gananciamaxima)
+                    {
+                        gananciamaxima = n.ganancias;
+                        nombredelatiendagmax = n.nombreNegocio;
+                    }
+                    if (n.ganancias < gananciaminima)
+                    {
+                        gananciaminima = n.ganancias;
+                        nombredelatiendagmin = n.nombreNegocio;
+                    }
                 }
 
                 clientesTotales = clientesTotales + clientesdeldia;
@@ -78,12 +115,39 @@ namespace SimulacionMall
                 Console.WriteLine("La ganancia del dia " + dia + "fue de " + gananciadeldia);
                 Console.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
 
+                Console.WriteLine("La tienda con mas clientes en el dia " + dia + " fue " + nombredelatiendacmax);
+                Console.WriteLine("La tienda con menos clientes en el dia " + dia + " fue " + nombredelatiendacmin);
 
-                //Mayor y menor cantidad de ganancia y clientes
-                
+                Console.WriteLine("La tienda con mas ganancias en el dia " + dia + " fue " + nombredelatiendagmax + " con una ganancia de " + gananciamaxima);
+                Console.WriteLine("La tienda con menos ganancias en el dia " + dia + " fue " + nombredelatiendagmax + "con una ganancia de " + gananciaminima);
+
                 dia = dia + 1;
 
             }
+
+
+            Console.WriteLine("En cuanto al resumen total:");
+            double gananciatotalmaxima = -99999999999999;
+            double gananciatotalminima = 999999999999999; //Numero muy alto, asumimos que el usuario no va a poner algo mas grande que esto
+            string nombregananciamax = "";
+            string nombregananciamin = "";
+
+            foreach (Negocio n in listadenegociostotal)
+            {
+                if (n.gananciatotal > gananciatotalmaxima)
+                {
+                    gananciatotalmaxima = n.gananciatotal;
+                    nombregananciamax = n.nombreNegocio;
+                }
+                if (n.gananciatotal < gananciatotalminima)
+                {
+                    gananciatotalminima = n.gananciatotal;
+                    nombregananciamin = n.nombreNegocio;
+                }
+            }
+
+            Console.WriteLine("El negocio que mas ganancia tuvo fue  " + nombregananciamax + "con una ganancia total de " + gananciatotalmaxima);
+            Console.WriteLine("El negocio que menos ganancia tuvo fue " + nombregananciamin + "con una ganancia total de " + gananciatotalminima);
             Console.ReadLine();
 
 
