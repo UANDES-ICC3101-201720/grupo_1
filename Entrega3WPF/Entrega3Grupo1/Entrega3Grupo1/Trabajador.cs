@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulacionMall
+namespace Entrega3Grupo1
 {
     class Trabajador
     {

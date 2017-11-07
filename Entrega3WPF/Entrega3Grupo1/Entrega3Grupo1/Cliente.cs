@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulacionMall
+namespace Entrega3Grupo1
+
 {
     public class Cliente
     {
@@ -26,16 +27,6 @@ namespace SimulacionMall
             this.piso = piso;
             List<Negocio> planDeCompra = new List<Negocio>();
             List<Negocio> visitados = new List<Negocio>();
-        }
-        public void visitarTiendas(Cliente c)
-        {
-            foreach (Negocio n in c.plandeCompra)
-            {
-                if (!c.visitados.Contains(n))
-                {
-                    c.visitados.Add(n);
-                }
-            }
         }
     }
 }
