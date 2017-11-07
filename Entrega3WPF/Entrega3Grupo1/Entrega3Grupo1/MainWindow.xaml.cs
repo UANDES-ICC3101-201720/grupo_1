@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +45,17 @@ namespace Entrega3Grupo1
             CrearPisoSub.Visibility = Visibility.Hidden;
             NumeroEstacionamientos.Visibility = Visibility.Hidden;
             LabelNumeroEsatcionamientos.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Hidden;
+            NombreNegocio.Visibility = Visibility.Hidden;
+            PrecioMax.Visibility = Visibility.Hidden;
+            PrecioMin.Visibility = Visibility.Hidden;
+            ValorArriendo.Visibility = Visibility.Hidden;
+            Categoria.Visibility = Visibility.Hidden;
+            SubCategoria.Visibility = Visibility.Hidden;
+            CantidadEmpleados.Visibility = Visibility.Hidden;
+            AreaNegocio.Visibility = Visibility.Hidden;
+            Stock.Visibility = Visibility.Hidden;
+
 
         }
 
@@ -88,6 +99,7 @@ namespace Entrega3Grupo1
             new Mall(nombre, horas);
             CrearPisoSobreNivel.Visibility = Visibility.Visible;
             CrearSubterraneo.Visibility = Visibility.Visible;
+            FinalizarPisos.Visibility = Visibility.Visible;
         }
 
         private void CrearPisoSobreNivel_Click(object sender, RoutedEventArgs e)
@@ -107,10 +119,10 @@ namespace Entrega3Grupo1
             NumeroLocales.Visibility = Visibility.Visible;
             AreaPiso.Visibility = Visibility.Visible;
             CrearPisoSobre.Visibility = Visibility.Visible;
-            
+
         }
 
-            
+
         private void CrearPisoSobre_Click(object sender, RoutedEventArgs e)
         {
             Piso piso = new Piso(contadorPisosSobre, Convert.ToInt32(AreaPiso.Text), Convert.ToInt32(NumeroLocales.Text));
@@ -188,6 +200,62 @@ namespace Entrega3Grupo1
             AreaPiso.Clear();
             NumeroLocales.Clear();
             contadorPisosSub -= 1;
+        }
+
+        private void FinalizarPisos_Click(object sender, RoutedEventArgs e)
+        {
+            Bienvenido.Visibility = Visibility.Hidden;
+            Inicio.Visibility = Visibility.Hidden;
+            TxtBoxHorasMall.Visibility = Visibility.Hidden;
+            TxtBoxNombreMall.Visibility = Visibility.Hidden;
+            LabelHoraMall.Visibility = Visibility.Hidden;
+            LabelNombreMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            Cancelar.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            LabelAreaPiso.Visibility = Visibility.Hidden;
+            LabelNumeroLocales.Visibility = Visibility.Hidden;
+            NumeroLocales.Visibility = Visibility.Hidden;
+            AreaPiso.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            CrearPisoSobre.Visibility = Visibility.Hidden;
+            NumeroEstacionamientos.Visibility = Visibility.Hidden;
+            LabelNumeroEsatcionamientos.Visibility = Visibility.Hidden;
+            NombreNegocio.Visibility = Visibility.Visible;
+            PrecioMax.Visibility = Visibility.Visible;
+            PrecioMin.Visibility = Visibility.Visible;
+            ValorArriendo.Visibility = Visibility.Visible;
+            Categoria.Visibility = Visibility.Visible;
+            SubCategoria.Visibility = Visibility.Visible;
+            CantidadEmpleados.Visibility = Visibility.Visible;
+            AreaNegocio.Visibility = Visibility.Visible;
+            Stock.Visibility = Visibility.Visible;
+
+            foreach (Piso piso in pisoSobreNivel)
+            {
+                int contlocales = 1;
+                while (contlocales <= piso.numLocales)
+                {
+                    List<Negocio> negocios = new List<Negocio>();
+                    string nombre = NombreNegocio.Text;
+                    int areanegocio = Int32.Parse(AreaNegocio.Text);
+                    int cantidadempleados = Int32.Parse(CantidadEmpleados.Text);
+                    int preciominimo = Int32.Parse(PrecioMin.Text);
+                    int preciomaximo = Int32.Parse(PrecioMax.Text);
+                    int precioarriendo = Int32.Parse(ValorArriendo.Text);
+                    int stock = Int32.Parse(Stock.Text);
+
+                }
+            }
+
+
+        }
+
+        private void NombreNegocio_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
