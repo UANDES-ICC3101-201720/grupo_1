@@ -1,4 +1,4 @@
-﻿<Window x:Class="Entrega3Grupo1.MainWindow"
+<Window x:Class="Entrega3Grupo1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -18,7 +18,7 @@
         <TextBox x:Name="TxtBoxHorasMall" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,118,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="CrearPisoSobreNivel" Content="Crear Piso Sobre Nivel" HorizontalAlignment="Left" Height="32" Margin="64,123,0,0" VerticalAlignment="Top" Width="157" Click="CrearPisoSobreNivel_Click" />
         <Button x:Name="CrearSubterraneo" Content="Crear Piso Subterraneo" HorizontalAlignment="Left" Height="32" Margin="296,123,0,0" VerticalAlignment="Top" Width="157" Click="CrearSubterraneo_Click"  />
-        <Label x:Name="LabelAreaPiso" Content="Ingrese el Area del piso" HorizontalAlignment="Left" Margin="25,67,0,0" VerticalAlignment="Top" Width="230" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="LabelAreaPiso" HorizontalAlignment="Left" Margin="25,67,0,0" VerticalAlignment="Top" Width="230" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <TextBox x:Name="AreaPiso" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="LabelNumeroLocales" Content="Ingrese el numero de Locales de este piso" HorizontalAlignment="Left" Margin="25,118,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <TextBox x:Name="NumeroLocales" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,118,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -26,6 +26,16 @@
         <Button x:Name="CrearPisoSub" Content="Crear Piso" HorizontalAlignment="Left" Height="32" Margin="56,214,0,0" VerticalAlignment="Top" Width="157" Click="CrearPisoSub_Click"  />
         <Label x:Name="LabelNumeroEsatcionamientos" Content="Ingrese el numero de Estacionamientos" HorizontalAlignment="Left" Margin="25,118,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <TextBox x:Name="NumeroEstacionamientos" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,118,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="FinalizarPisos" Content="Pisos finalizados!" HorizontalAlignment="Left" Margin="201,273,0,0" VerticalAlignment="Top" Width="96" Height="38" Click="FinalizarPisos_Click"/>
+        <TextBox x:Name="NombreNegocio" HorizontalAlignment="Left" Height="23" Margin="56,10,0,0" TextWrapping="Wrap" Text="Nombre negocio" VerticalAlignment="Top" Width="120" TextChanged="NombreNegocio_TextChanged"/>
+        <TextBox x:Name="AreaNegocio" HorizontalAlignment="Left" Height="23" Margin="56,38,0,0" TextWrapping="Wrap" Text="Area negocio" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CantidadEmpleados" HorizontalAlignment="Left" Height="23" Margin="213,10,0,0" TextWrapping="Wrap" Text="Cant. Empleados" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Categoria" HorizontalAlignment="Left" Height="23" Margin="213,38,0,0" TextWrapping="Wrap" Text="Categoria" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PrecioMax" HorizontalAlignment="Left" Height="23" Margin="374,10,0,0" TextWrapping="Wrap" Text="Precio Maximo" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PrecioMin" HorizontalAlignment="Left" Height="23" Margin="374,38,0,0" TextWrapping="Wrap" Text="Precio Minimo" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ValorArriendo" HorizontalAlignment="Left" Height="23" Margin="56,97,0,0" TextWrapping="Wrap" Text="Valor arriendo" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Stock" HorizontalAlignment="Left" Height="23" Margin="222,98,0,0" TextWrapping="Wrap" Text="Stock" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SubCategoria" HorizontalAlignment="Left" Height="23" Margin="374,98,0,0" TextWrapping="Wrap" Text="SubCategoria" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
