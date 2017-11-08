@@ -119,6 +119,7 @@ namespace Entrega3Grupo1
             NumeroLocales.Visibility = Visibility.Visible;
             AreaPiso.Visibility = Visibility.Visible;
             CrearPisoSobre.Visibility = Visibility.Visible;
+            FinalizarPisos.Visibility = Visibility.Hidden;
 
         }
 
@@ -144,6 +145,7 @@ namespace Entrega3Grupo1
             CrearPisoSobreNivel.Visibility = Visibility.Visible;
             CrearSubterraneo.Visibility = Visibility.Visible;
             CrearPisoSobre.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Visible;
             AreaPiso.Clear();
             NumeroLocales.Clear();
             contadorPisosSobre += 1;
@@ -169,6 +171,7 @@ namespace Entrega3Grupo1
             CrearPisoSub.Visibility = Visibility.Visible;
             NumeroEstacionamientos.Visibility = Visibility.Visible;
             LabelNumeroEsatcionamientos.Visibility = Visibility.Visible;
+            FinalizarPisos.Visibility = Visibility.Hidden;
 
         }
 
@@ -194,8 +197,10 @@ namespace Entrega3Grupo1
             CrearPisoSobreNivel.Visibility = Visibility.Visible;
             CrearSubterraneo.Visibility = Visibility.Visible;
             CrearPisoSobre.Visibility = Visibility.Hidden;
+            CrearPisoSub.Visibility = Visibility.Hidden;
             NumeroEstacionamientos.Visibility = Visibility.Hidden;
             LabelNumeroEsatcionamientos.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Visible;
             NumeroEstacionamientos.Clear();
             AreaPiso.Clear();
             NumeroLocales.Clear();
@@ -246,7 +251,7 @@ namespace Entrega3Grupo1
                     int preciomaximo = Int32.Parse(PrecioMax.Text);
                     int precioarriendo = Int32.Parse(ValorArriendo.Text);
                     int stock = Int32.Parse(Stock.Text);
-
+                    
                 }
             }
 
