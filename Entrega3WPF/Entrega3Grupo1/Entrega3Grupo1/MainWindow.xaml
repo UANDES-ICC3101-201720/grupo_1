@@ -19,7 +19,7 @@
         <Button x:Name="CrearPisoSobreNivel" Content="Crear Piso Sobre Nivel" HorizontalAlignment="Left" Height="32" Margin="64,123,0,0" VerticalAlignment="Top" Width="157" Click="CrearPisoSobreNivel_Click" />
         <Button x:Name="CrearSubterraneo" Content="Crear Piso Subterraneo" HorizontalAlignment="Left" Height="32" Margin="296,123,0,0" VerticalAlignment="Top" Width="157" Click="CrearSubterraneo_Click"  />
         <Label x:Name="LabelAreaPiso" HorizontalAlignment="Left" Margin="25,67,0,0" VerticalAlignment="Top" Width="230" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="AreaPiso" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="AreaPiso" Content="Ingrese el area" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="LabelNumeroLocales" Content="Ingrese el numero de Locales de este piso" HorizontalAlignment="Left" Margin="25,118,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <TextBox x:Name="NumeroLocales" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,118,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="CrearPisoSobre" Content="Crear Piso" HorizontalAlignment="Left" Height="32" Margin="56,214,0,0" VerticalAlignment="Top" Width="157" Click="CrearPisoSobre_Click"  />
