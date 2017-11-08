@@ -28,7 +28,7 @@ namespace Entrega3Grupo1
         public int clientesTotales = 0;
 
 
-        public Negocio(string nombreNegocio, int areaNegocio, int piso, int precioArriendo, int precioMin, int precioMax, int stock, int numEmpleados, int clientesDiaAnterior, int clientesDelDia, string cat, string subcat)
+        public Negocio(string nombreNegocio, int areaNegocio, int piso, int precioArriendo, int precioMin, int precioMax, int stock, int numEmpleados, string cat, string subcat)
         {
             this.nombreNegocio = nombreNegocio;
             this.areaNegocio = areaNegocio;
@@ -38,8 +38,6 @@ namespace Entrega3Grupo1
             this.precioMin = precioMin;
             this.stock = stock;
             this.numEmpleados = numEmpleados;
-            this.clientesDiaAnterior = clientesDiaAnterior;
-            this.clientesDelDia = clientesDelDia;
             this.cat = cat;
             this.subcat = subcat;
         }

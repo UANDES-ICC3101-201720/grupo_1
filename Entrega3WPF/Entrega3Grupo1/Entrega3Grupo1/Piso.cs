@@ -10,14 +10,13 @@ namespace Entrega3Grupo1
     {
         public int numeroPiso;
         public int areaPiso;
-        public int numLocales;
+        public List<Negocio> tiendasPorPiso;
 
-        public Piso(int numeroPiso, int areaPiso, int numLocales)
+        public Piso(int numeroPiso, int areaPiso, List<Negocio> tiendasPorPiso)
         {
             this.numeroPiso = numeroPiso;
             this.areaPiso = areaPiso;
-            this.numLocales = numLocales;
-            List<Negocio> tiendasPorPiso = new List<Negocio>();
+            this.tiendasPorPiso = tiendasPorPiso;
         }
 
 
