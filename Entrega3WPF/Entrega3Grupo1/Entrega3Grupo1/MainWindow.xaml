@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Entrega3Grupo1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350.075" Width="536.097">
     <Grid>
         <Button x:Name="Inicio" Content="Inicio" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="Inicio_Click" />
         <Label x:Name="Bienvenido" Content="Bienvenido a la simulacion" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0
@@ -37,7 +37,7 @@
         <TextBox x:Name="TextBoxCantidadDeTiendasPorPiso" HorizontalAlignment="Left" Height="34" Margin="184,200,0,0" TextWrapping="Wrap" Text="Cantidad de tiendas?" VerticalAlignment="Top" Width="153"/>
         <Label x:Name="LabelPisoFinalizado" Content="SE LLENO EL PISO, FINALIZE" HorizontalAlignment="Left" Margin="85,121,0,0" VerticalAlignment="Top" Width="197"/>
         <Label x:Name="LabelLocalesEnPiso" Content="Locales en este piso:" HorizontalAlignment="Left" Margin="191,175,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ButtonSimular" Content="SIMULAR!" HorizontalAlignment="Left" Margin="222,103,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSimular_Click"/>
+        <Button x:Name="ButtonSimular" Content="SIMULAR!" HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="149" Click="ButtonSimular_Click" Height="46"/>
 
     </Grid>
 </Window>
