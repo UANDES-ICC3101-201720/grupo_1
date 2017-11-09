@@ -56,6 +56,9 @@ namespace Entrega3Grupo1
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
         }
 
         private void Inicio_Click(object sender, RoutedEventArgs e)
@@ -72,6 +75,9 @@ namespace Entrega3Grupo1
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
 
         }
 
@@ -99,6 +105,9 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
         }
 
         private void CrearPisoSobreNivel_Click(object sender, RoutedEventArgs e)
@@ -121,6 +130,9 @@ namespace Entrega3Grupo1
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
 
         }
 
@@ -165,6 +177,9 @@ namespace Entrega3Grupo1
             AreaPiso.Clear();
             contadorPisosSobre += 1;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
         }
 
         private void CrearSubterraneo_Click(object sender, RoutedEventArgs e)
@@ -188,6 +203,9 @@ namespace Entrega3Grupo1
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
 
         }
 
@@ -218,6 +236,9 @@ namespace Entrega3Grupo1
             AreaPiso.Clear();
             contadorPisosSub -= 1;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
         }
 
         private void FinalizarPisos_Click(object sender, RoutedEventArgs e)
@@ -252,6 +273,9 @@ namespace Entrega3Grupo1
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Visible;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
         }
 
         private void FinalizarNegocios_Click(object sender, RoutedEventArgs e)
@@ -285,6 +309,9 @@ namespace Entrega3Grupo1
             BotonAgregarNegocio.Visibility = Visibility.Hidden;
             BotonFinalizarNegocios.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
         }
 
         private void BotonAgregarNegocio_Click(object sender, RoutedEventArgs e)
@@ -305,7 +332,7 @@ namespace Entrega3Grupo1
                 AreaNegocio.Visibility = Visibility.Hidden;
                 Stock.Visibility = Visibility.Hidden;
                 CrearPisoSobreNivel.Visibility = Visibility.Visible;
-                FinalizarPisos.Visibility = Visibility.Visible;                
+                FinalizarPisos.Visibility = Visibility.Visible;
                 TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
                 TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
                 Bienvenido.Visibility = Visibility.Hidden;
@@ -320,7 +347,10 @@ namespace Entrega3Grupo1
                 AreaPiso.Visibility = Visibility.Hidden;
                 BotonAgregarNegocio.Visibility = Visibility.Hidden;
                 BotonFinalizarNegocios.Visibility = Visibility.Hidden;
-                LabelLocalesEnPiso.Visibility = Visibility.Visible;                
+                LabelLocalesEnPiso.Visibility = Visibility.Visible;
+                GuardarSimulacion.Visibility = Visibility.Hidden;
+                LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+                MostrarReporte.Visibility = Visibility.Hidden;
             }
 
             List<Negocio> negocios = new List<Negocio>();
@@ -357,6 +387,9 @@ namespace Entrega3Grupo1
             AreaNegocio.Text = "Area Negocio";
             Stock.Text = "Stock";
             actual.tiendasUsadas = actual.tiendasUsadas + 1;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
         }
 
         private void TextBoxSueldoPromedio_TextChanged(object sender, TextChangedEventArgs e)
@@ -396,7 +429,86 @@ namespace Entrega3Grupo1
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Visible;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Visible;
 
+        }
+
+        private void MostrarReporte_Click(object sender, RoutedEventArgs e)
+        {
+            Inicio.Visibility = Visibility.Hidden;
+            Bienvenido.Visibility = Visibility.Hidden;
+            LabelNombreMall.Visibility = Visibility.Hidden;
+            LabelHoraMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            TxtBoxHorasMall.Visibility = Visibility.Hidden;
+            TxtBoxNombreMall.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            LabelAreaPiso.Visibility = Visibility.Hidden;
+            AreaPiso.Visibility = Visibility.Hidden;
+            CrearPisoSobre.Visibility = Visibility.Hidden;
+            CrearPisoSub.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Hidden;
+            NombreNegocio.Visibility = Visibility.Hidden;
+            AreaNegocio.Visibility = Visibility.Hidden;
+            CantidadEmpleados.Visibility = Visibility.Hidden;
+            Categoria.Visibility = Visibility.Hidden;
+            PrecioMax.Visibility = Visibility.Hidden;
+            PrecioMin.Visibility = Visibility.Hidden;
+            ValorArriendo.Visibility = Visibility.Hidden;
+            Stock.Visibility = Visibility.Hidden;
+            SubCategoria.Visibility = Visibility.Hidden;
+            BotonAgregarNegocio.Visibility = Visibility.Hidden;
+            BotonFinalizarNegocios.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
+            ButtonSimular.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
+           
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+
+        }
+
+        private void GuardarSimulacion_Click(object sender, RoutedEventArgs e)
+        {
+            Inicio.Visibility = Visibility.Hidden;
+            Bienvenido.Visibility = Visibility.Hidden;
+            LabelNombreMall.Visibility = Visibility.Hidden;
+            LabelHoraMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            TxtBoxHorasMall.Visibility = Visibility.Hidden;
+            TxtBoxNombreMall.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            LabelAreaPiso.Visibility = Visibility.Hidden;
+            AreaPiso.Visibility = Visibility.Hidden;
+            CrearPisoSobre.Visibility = Visibility.Hidden;
+            CrearPisoSub.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Hidden;
+            NombreNegocio.Visibility = Visibility.Hidden;
+            AreaNegocio.Visibility = Visibility.Hidden;
+            CantidadEmpleados.Visibility = Visibility.Hidden;
+            Categoria.Visibility = Visibility.Hidden;
+            PrecioMax.Visibility = Visibility.Hidden;
+            PrecioMin.Visibility = Visibility.Hidden;
+            ValorArriendo.Visibility = Visibility.Hidden;
+            Stock.Visibility = Visibility.Hidden;
+            SubCategoria.Visibility = Visibility.Hidden;
+            BotonAgregarNegocio.Visibility = Visibility.Hidden;
+            BotonFinalizarNegocios.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
+            ButtonSimular.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Visible;
         }
     }
 }
