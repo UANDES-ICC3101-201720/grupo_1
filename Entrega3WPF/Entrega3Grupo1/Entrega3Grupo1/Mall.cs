@@ -10,12 +10,14 @@ namespace Entrega3Grupo1
     {
         string nombreMall;
         int horaFuncionamiento;
+        int sueldoPromedio;
 
-        public Mall(string nombreMall, int horaFuncionamiento)
+        public Mall(string nombreMall, int horaFuncionamiento, int sueldoPromedio)
         {
             this.nombreMall = nombreMall;
             this.horaFuncionamiento = horaFuncionamiento;
             List<Piso> pisos = new List<Piso>();
+            this.sueldoPromedio = sueldoPromedio;
         }
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +20,7 @@ namespace Entrega3Grupo1
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         List<Piso> pisoSobreNivel = new List<Piso>();
         List<Piso> pisoSubt = new List<Piso>();
         int contadorPisosSobre = 1;
@@ -53,6 +53,9 @@ namespace Entrega3Grupo1
             Stock.Visibility = Visibility.Hidden;
             BotonAgregarNegocio.Visibility = Visibility.Hidden;
             BotonFinalizarNegocios.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
         }
 
         private void Inicio_Click(object sender, RoutedEventArgs e)
@@ -64,7 +67,10 @@ namespace Entrega3Grupo1
             LabelHoraMall.Visibility = Visibility.Visible;
             LabelNombreMall.Visibility = Visibility.Visible;
             CrearMall.Visibility = Visibility.Visible;
-
+            TextBoxSueldoPromedio.Visibility = Visibility.Visible;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
+            
 
         }
 
@@ -84,10 +90,14 @@ namespace Entrega3Grupo1
             AreaPiso.Visibility = Visibility.Hidden;
             string nombre = TxtBoxNombreMall.Text;
             int horas = Convert.ToInt32(TxtBoxHorasMall.Text);
-            new Mall(nombre, horas);
+            int sueldoPromedio = Convert.ToInt32(TextBoxSueldoPromedio.Text);
+            new Mall(nombre, horas, sueldoPromedio);
             CrearPisoSobreNivel.Visibility = Visibility.Visible;
             CrearSubterraneo.Visibility = Visibility.Visible;
             FinalizarPisos.Visibility = Visibility.Visible;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
         }
 
         private void CrearPisoSobreNivel_Click(object sender, RoutedEventArgs e)
@@ -105,6 +115,9 @@ namespace Entrega3Grupo1
             AreaPiso.Visibility = Visibility.Visible;
             CrearPisoSobre.Visibility = Visibility.Visible;
             FinalizarPisos.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
 
         }
 
@@ -112,7 +125,8 @@ namespace Entrega3Grupo1
         private void CrearPisoSobre_Click(object sender, RoutedEventArgs e)
         {
             List<Negocio> negocio = new List<Negocio>();
-            Piso piso = new Piso(contadorPisosSobre, Convert.ToInt32(AreaPiso.Text), negocio);
+            int tiendasdisponibles = Convert.ToInt32(TextBoxCantidadDeTiendasPorPiso.Text);
+            Piso piso = new Piso(contadorPisosSobre, Convert.ToInt32(AreaPiso.Text), negocio, tiendasdisponibles, 1);
             pisoSobreNivel.Add(piso);
             Bienvenido.Visibility = Visibility.Hidden;
             Inicio.Visibility = Visibility.Hidden;
@@ -140,6 +154,10 @@ namespace Entrega3Grupo1
             FinalizarPisos.Visibility = Visibility.Hidden;
             BotonAgregarNegocio.Visibility = Visibility.Visible;
             BotonFinalizarNegocios.Visibility = Visibility.Visible;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             AreaPiso.Clear();
             contadorPisosSobre += 1;
         }
@@ -160,13 +178,16 @@ namespace Entrega3Grupo1
             CrearPisoSobre.Visibility = Visibility.Hidden;
             CrearPisoSub.Visibility = Visibility.Visible;
             FinalizarPisos.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
 
         }
 
         private void CrearPisoSub_Click(object sender, RoutedEventArgs e)
         {
-            List <Negocio> nada = new List<Negocio>();
-            Piso piso = new Piso(contadorPisosSub, Convert.ToInt32(AreaPiso.Text), nada);
+            List<Negocio> nada = new List<Negocio>();
+            Piso piso = new Piso(contadorPisosSub, Convert.ToInt32(AreaPiso.Text), nada, 0, 0);
             pisoSubt.Add(piso);
             pisoSobreNivel.Add(piso);
             Bienvenido.Visibility = Visibility.Hidden;
@@ -185,38 +206,44 @@ namespace Entrega3Grupo1
             CrearPisoSobre.Visibility = Visibility.Hidden;
             CrearPisoSub.Visibility = Visibility.Hidden;
             FinalizarPisos.Visibility = Visibility.Visible;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             AreaPiso.Clear();
             contadorPisosSub -= 1;
         }
 
         private void FinalizarPisos_Click(object sender, RoutedEventArgs e)
         {
-                Bienvenido.Visibility = Visibility.Hidden;
-                Inicio.Visibility = Visibility.Hidden;
-                TxtBoxHorasMall.Visibility = Visibility.Hidden;
-                TxtBoxNombreMall.Visibility = Visibility.Hidden;
-                LabelHoraMall.Visibility = Visibility.Hidden;
-                LabelNombreMall.Visibility = Visibility.Hidden;
-                CrearMall.Visibility = Visibility.Hidden;
-                CrearSubterraneo.Visibility = Visibility.Hidden;
-                CrearPisoSobreNivel.Visibility = Visibility.Hidden;
-                LabelAreaPiso.Visibility = Visibility.Hidden;
-                AreaPiso.Visibility = Visibility.Hidden;
-                CrearPisoSobreNivel.Visibility = Visibility.Hidden;
-                CrearSubterraneo.Visibility = Visibility.Hidden;
-                CrearPisoSobre.Visibility = Visibility.Hidden;
-                NombreNegocio.Visibility = Visibility.Hidden;
-                PrecioMax.Visibility = Visibility.Hidden;
-                PrecioMin.Visibility = Visibility.Hidden;
-                ValorArriendo.Visibility = Visibility.Hidden;
-                Categoria.Visibility = Visibility.Hidden;
-                SubCategoria.Visibility = Visibility.Hidden;
-                CantidadEmpleados.Visibility = Visibility.Hidden;
-                AreaNegocio.Visibility = Visibility.Hidden;
-                Stock.Visibility = Visibility.Hidden;
-                FinalizarPisos.Visibility = Visibility.Hidden;
-                BotonAgregarNegocio.Visibility = Visibility.Hidden;
-                
+            Bienvenido.Visibility = Visibility.Hidden;
+            Inicio.Visibility = Visibility.Hidden;
+            TxtBoxHorasMall.Visibility = Visibility.Hidden;
+            TxtBoxNombreMall.Visibility = Visibility.Hidden;
+            LabelHoraMall.Visibility = Visibility.Hidden;
+            LabelNombreMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            LabelAreaPiso.Visibility = Visibility.Hidden;
+            AreaPiso.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            CrearPisoSobre.Visibility = Visibility.Hidden;
+            NombreNegocio.Visibility = Visibility.Hidden;
+            PrecioMax.Visibility = Visibility.Hidden;
+            PrecioMin.Visibility = Visibility.Hidden;
+            ValorArriendo.Visibility = Visibility.Hidden;
+            Categoria.Visibility = Visibility.Hidden;
+            SubCategoria.Visibility = Visibility.Hidden;
+            CantidadEmpleados.Visibility = Visibility.Hidden;
+            AreaNegocio.Visibility = Visibility.Hidden;
+            Stock.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Hidden;
+            BotonAgregarNegocio.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
+
         }
 
         private void FinalizarNegocios_Click(object sender, RoutedEventArgs e)
@@ -244,11 +271,21 @@ namespace Entrega3Grupo1
             FinalizarPisos.Visibility = Visibility.Visible;
             BotonAgregarNegocio.Visibility = Visibility.Hidden;
             BotonFinalizarNegocios.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
         }
 
         private void BotonAgregarNegocio_Click(object sender, RoutedEventArgs e)
         {
             Piso actual = pisoSobreNivel.Last();
+            int tiendasUsadas = actual.tiendasUsadas;
+            int tiendasdisponibles = actual.cantidadTiendas;
+            if (tiendasdisponibles == actual.tiendasUsadas)
+            {
+                LabelPisoFinalizado.Visibility = Visibility.Visible;
+            }
+            
             List<Negocio> negocios = new List<Negocio>();
             string nombre = NombreNegocio.Text;
             int areaNegocio = Convert.ToInt32(AreaNegocio.Text);
@@ -259,7 +296,7 @@ namespace Entrega3Grupo1
             int pMax = Convert.ToInt32(PrecioMax.Text);
             int pMin = Convert.ToInt32(PrecioMin.Text);
             string subCat = SubCategoria.Text;
-            Negocio negocioAcutal = new Negocio(nombre,areaNegocio,actual.numeroPiso,valArriendo,pMin,pMax,stock,canEmpl,cat,subCat);
+            Negocio negocioAcutal = new Negocio(nombre, areaNegocio, actual.numeroPiso, valArriendo, pMin, pMax, stock, canEmpl, cat, subCat);
             negocios.Add(negocioAcutal);
             actual.tiendasPorPiso = negocios;
             Bienvenido.Visibility = Visibility.Hidden;
@@ -288,6 +325,8 @@ namespace Entrega3Grupo1
             FinalizarPisos.Visibility = Visibility.Hidden;
             BotonAgregarNegocio.Visibility = Visibility.Visible;
             BotonFinalizarNegocios.Visibility = Visibility.Visible;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
 
             NombreNegocio.Text = "Nombre Negocio";
             PrecioMax.Text = "Precio Maximo";
@@ -298,6 +337,12 @@ namespace Entrega3Grupo1
             CantidadEmpleados.Text = "Cantida Empleados";
             AreaNegocio.Text = "Area Negocio";
             Stock.Text = "Stock";
+            actual.tiendasUsadas = actual.tiendasUsadas + 1;
+        }
+
+        private void TextBoxSueldoPromedio_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }
