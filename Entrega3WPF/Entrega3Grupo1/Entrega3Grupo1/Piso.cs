@@ -21,7 +21,7 @@ namespace Entrega3Grupo1
             this.tiendasPorPiso = tiendasPorPiso;
             this.cantidadTiendas = cantidadTiendas;
             this.tiendasUsadas = tiendasUsadas;
-        
+
         }
 
 

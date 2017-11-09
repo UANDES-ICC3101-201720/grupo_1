@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace SimulacionMall
+namespace Entrega3Grupo1
 {
     /// <summary>
     /// Lógica de interacción para App.xaml

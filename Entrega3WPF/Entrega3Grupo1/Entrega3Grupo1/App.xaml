@@ -1,7 +1,7 @@
-﻿<Application x:Class="SimulacionMall.App"
+﻿<Application x:Class="Entrega3Grupo1.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:SimulacionMall"
+             xmlns:local="clr-namespace:Entrega3Grupo1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
