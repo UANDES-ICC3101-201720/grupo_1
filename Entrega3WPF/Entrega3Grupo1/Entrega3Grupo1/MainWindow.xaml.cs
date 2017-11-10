@@ -41,6 +41,7 @@ namespace Entrega3Grupo1
         List<Piso> pisoSubt = new List<Piso>();
         int contadorPisosSobre = 1;
         int contadorPisosSub = -1;
+        int sueldoPromedio;
         public MainWindow()
         {
             InitializeComponent();
@@ -78,6 +79,11 @@ namespace Entrega3Grupo1
             MostrarReporte.Visibility = Visibility.Hidden;
             LabelSueldoProm.Visibility = Visibility.Hidden;
             LabelCantidadNegocios.Visibility = Visibility.Hidden;
+            Reporte.Visibility = Visibility.Hidden;
+            TodosLosLocales.Visibility = Visibility.Hidden;
+            InformacionPorLocal.Visibility = Visibility.Hidden;
+            InformeLocal.Visibility = Visibility.Hidden;
+            button.Visibility = Visibility.Hidden;
         }
 
         private void Inicio_Click(object sender, RoutedEventArgs e)
@@ -114,7 +120,7 @@ namespace Entrega3Grupo1
             AreaPiso.Visibility = Visibility.Hidden;
             string nombre = TxtBoxNombreMall.Text;
             int horas = Convert.ToInt32(TxtBoxHorasMall.Text);
-            int sueldoPromedio = Convert.ToInt32(TextBoxSueldoPromedio.Text);
+            sueldoPromedio = Convert.ToInt32(TextBoxSueldoPromedio.Text);
             new Mall(nombre, horas, sueldoPromedio);
             CrearPisoSobreNivel.Visibility = Visibility.Visible;
             FinalizarPisos.Visibility = Visibility.Visible;
@@ -415,6 +421,7 @@ namespace Entrega3Grupo1
 
         private void ButtonSimular_Click(object sender, RoutedEventArgs e)
         {
+            List<string> reporteCompleto = new List<string>();
             FileStream fs = new FileStream("Reporte.txt", FileMode.OpenOrCreate);
             StreamWriter fw = new StreamWriter(fs);
             Inicio.Visibility = Visibility.Hidden;
@@ -449,12 +456,14 @@ namespace Entrega3Grupo1
             GuardarSimulacion.Visibility = Visibility.Visible;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Visible;
+            InformacionPorLocal.Visibility = Visibility.Visible;
+            InformeLocal.Visibility = Visibility.Hidden;
             int dia = 1;
             int clientesTotales = 0;
             int gananciaTotal = 0;
             while (dia <= 10)
             {
-                Console.WriteLine("Simulacion del dia: " + dia);
+                
                 fw.WriteLine("Simulacion del dia: " + dia);
                 //Cantidad de clientes recepcionados y ganancias, promedio y del dia
 
@@ -509,17 +518,15 @@ namespace Entrega3Grupo1
                 clientesTotales = clientesTotales + clientesdeldia;
                 gananciaTotal = Convert.ToInt32(gananciaTotal + gananciadeldia);
 
-                Console.WriteLine("La cantidad de clientes del dia " + dia + " fue de " + clientesdeldia);
-                Console.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + " es de" + (clientesTotales / dia));
-
-                Console.WriteLine("La ganancia del dia " + dia + " fue de " + gananciadeldia);
-                Console.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
-
-                Console.WriteLine("La tienda con mas clientes en el dia " + dia + " fue " + nombredelatiendacmax);
-                Console.WriteLine("La tienda con menos clientes en el dia " + dia + " fue " + nombredelatiendacmin);
-
-                Console.WriteLine("La tienda con mas ganancias en el dia " + dia + " fue " + nombredelatiendagmax + " con una ganancia de " + gananciamaxima);
-                Console.WriteLine("La tienda con menos ganancias en el dia " + dia + " fue " + nombredelatiendagmax + "con una ganancia de " + gananciaminima);
+                string TextoReporte = "Simulacion del dia: " + dia
+                    + "\nLa cantidad de clientes del dia " + dia + " fue de " + clientesdeldia 
+                    + "\nLa cantidad de clientes promedio hasta el dia " + dia + " es de" + (clientesTotales / dia)
+                    + "\nLa ganancia del dia " + dia + " fue de " + gananciadeldia
+                    + "\nLa ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia)
+                    + "\nLa tienda con mas clientes en el dia " + dia + " fue " + nombredelatiendacmax
+                    + "\nLa tienda con menos clientes en el dia " + dia + " fue " + nombredelatiendacmin
+                    + "\nLa tienda con mas ganancias en el dia " + dia + " fue " + nombredelatiendagmax + " con una ganancia de " + gananciamaxima
+                    + "\nLa tienda con menos ganancias en el dia " + dia + " fue " + nombredelatiendagmax + "con una ganancia de " + gananciaminima + "\n\n";
 
                 fw.WriteLine("La cantidad de clientes del dia " + dia + " fue de " + clientesdeldia);
                 fw.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + " es de" + (clientesTotales / dia));
@@ -533,9 +540,12 @@ namespace Entrega3Grupo1
                 fw.WriteLine("La tienda con mas ganancias en el dia " + dia + " fue " + nombredelatiendagmax + " con una ganancia de " + gananciamaxima);
                 fw.WriteLine("La tienda con menos ganancias en el dia " + dia + " fue " + nombredelatiendagmax + "con una ganancia de " + gananciaminima);
 
+                reporteCompleto.Add(TextoReporte);
                 dia = dia + 1;
 
             }
+
+            Reporte.Text = String.Join("",reporteCompleto);
         }
 
         private void MostrarReporte_Click(object sender, RoutedEventArgs e)
@@ -572,7 +582,7 @@ namespace Entrega3Grupo1
             MostrarReporte.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
-
+            Reporte.Visibility = Visibility.Visible;
         }
 
         private void GuardarSimulacion_Click(object sender, RoutedEventArgs e)
@@ -609,6 +619,62 @@ namespace Entrega3Grupo1
             MostrarReporte.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Visible;
+        }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void InformacionPorLocal_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Negocio n in todosLosNegocios)
+            {
+                TodosLosLocales.Items.Add(n.nombreNegocio);
+            }
+            TodosLosLocales.Visibility = Visibility.Visible;
+            InformacionPorLocal.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
+            InformeLocal.Visibility = Visibility.Hidden;
+            button.Visibility = Visibility.Visible;
+        }
+
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = Convert.ToString(TodosLosLocales.SelectedItem);
+            Negocio neg = todosLosNegocios.Find(x => x.nombreNegocio.Contains(nombre));
+            nombre = neg.nombreNegocio;
+            int cantEmp = neg.numEmpleados;
+            string cat = neg.cat;
+            int piso = neg.piso;
+            int area = neg.areaNegocio;
+            int pMin = neg.precioMin;
+            int pMax = neg.precioMax;
+            int cArriendo = neg.precioArriendo;
+            int sueldoEmpleados = neg.numEmpleados * sueldoPromedio;
+            int vent = neg.numeroClientes;
+            double ganancia = neg.ganancias;
+            double gananciat = neg.gananciatotal;
+            InformeLocal.Text = "Local: " + nombre
+                + "\nCantidad de empleados: " + cantEmp
+                + "\nLa categoria: " + cat
+                + "\nEl piso en el que se encuentra: " + piso
+                + "\nÁrea de local: " + area
+                + "\nPrecio manimo: " + pMin
+                + "\nPrecio maximo: " + pMax
+                + "\nEl costo en arriendo del local: " + cArriendo
+                + "\nCosto en sueldos de empleados: " + sueldoEmpleados
+                + "\nLas ventas del local este día: " + vent
+                + "\nLa ganancia del local este día: " + ganancia
+                + "\nLa ganancia acumulada del local en toda la simulación: " + gananciat;
+            TodosLosLocales.Visibility = Visibility.Hidden;
+            InformacionPorLocal.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
+            InformeLocal.Visibility = Visibility.Visible;
+            button.Visibility = Visibility.Hidden;
         }
     }
 }
