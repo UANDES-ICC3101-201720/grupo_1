@@ -12,13 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.Serialization;
+using System.IO;
 
 namespace Entrega3Grupo1
 {
 
     public partial class MainWindow : Window
     {
-
+        public static void CalcularClientes(Negocio n)
+        {
+            Random rn = new Random();
+            int promedioPrecios = (n.precioMin + n.precioMax) / 2;
+            int cMAX = Convert.ToInt32(n.clientesDiaAnterior + (n.areaNegocio / 10.0) * (((Math.Max((100 - promedioPrecios), 0)) / 100.0) * n.numEmpleados));
+            n.clientesDelDia = rn.Next(0, cMAX);
+            n.clientesDiaAnterior = n.clientesDelDia;
+        }
+        public static void CalcularGanancia(Negocio n)
+        {
+            Random rn = new Random();
+            int ventaPromedio = rn.Next(n.precioMin, n.precioMax);
+            int costoArriendo = n.precioArriendo * n.areaNegocio;
+            double ganancia = (ventaPromedio * n.clientesDelDia) - (n.numEmpleados + costoArriendo);
+            n.ganancias = ganancia;
+        }
+        List<Negocio> todosLosNegocios = new List<Negocio>();
         List<Piso> pisoSobreNivel = new List<Piso>();
         List<Piso> pisoSubt = new List<Piso>();
         int contadorPisosSobre = 1;
@@ -54,11 +72,12 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
+            LabelSueldoProm.Visibility = Visibility.Hidden;
+            LabelCantidadNegocios.Visibility = Visibility.Hidden;
         }
 
         private void Inicio_Click(object sender, RoutedEventArgs e)
@@ -73,12 +92,11 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Visible;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
-
+            LabelSueldoProm.Visibility = Visibility.Visible;
         }
 
 
@@ -101,17 +119,18 @@ namespace Entrega3Grupo1
             CrearPisoSobreNivel.Visibility = Visibility.Visible;
             FinalizarPisos.Visibility = Visibility.Visible;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
-            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
+            LabelSueldoProm.Visibility = Visibility.Hidden;
         }
 
         private void CrearPisoSobreNivel_Click(object sender, RoutedEventArgs e)
         {
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
             Bienvenido.Visibility = Visibility.Hidden;
             Inicio.Visibility = Visibility.Hidden;
             TxtBoxHorasMall.Visibility = Visibility.Hidden;
@@ -127,12 +146,12 @@ namespace Entrega3Grupo1
             FinalizarPisos.Visibility = Visibility.Hidden;
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
-            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
             ButtonSimular.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
+            LabelCantidadNegocios.Visibility = Visibility.Visible;
 
         }
 
@@ -173,13 +192,14 @@ namespace Entrega3Grupo1
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             AreaPiso.Clear();
+            TextBoxCantidadDeTiendasPorPiso.Clear();
             contadorPisosSobre += 1;
             ButtonSimular.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
+            LabelCantidadNegocios.Visibility = Visibility.Hidden;
         }
 
         private void CrearSubterraneo_Click(object sender, RoutedEventArgs e)
@@ -201,7 +221,6 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
@@ -232,7 +251,6 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             AreaPiso.Clear();
             contadorPisosSub -= 1;
             ButtonSimular.Visibility = Visibility.Hidden;
@@ -271,7 +289,6 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Visible;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
@@ -308,15 +325,17 @@ namespace Entrega3Grupo1
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             BotonAgregarNegocio.Visibility = Visibility.Hidden;
             BotonFinalizarNegocios.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
+            
         }
 
         private void BotonAgregarNegocio_Click(object sender, RoutedEventArgs e)
         {
             Piso actual = pisoSobreNivel.Last();
+            int clientesDeDia = 0;
+            int clientesDelDiaAnterior = 0;
             int tiendasUsadas = actual.tiendasUsadas;
             int tiendasdisponibles = actual.cantidadTiendas;
             if (tiendasdisponibles == actual.tiendasUsadas)
@@ -333,7 +352,7 @@ namespace Entrega3Grupo1
                 Stock.Visibility = Visibility.Hidden;
                 CrearPisoSobreNivel.Visibility = Visibility.Visible;
                 FinalizarPisos.Visibility = Visibility.Visible;
-                TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Visible;
+                TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
                 TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
                 Bienvenido.Visibility = Visibility.Hidden;
                 Inicio.Visibility = Visibility.Hidden;
@@ -347,10 +366,10 @@ namespace Entrega3Grupo1
                 AreaPiso.Visibility = Visibility.Hidden;
                 BotonAgregarNegocio.Visibility = Visibility.Hidden;
                 BotonFinalizarNegocios.Visibility = Visibility.Hidden;
-                LabelLocalesEnPiso.Visibility = Visibility.Visible;
                 GuardarSimulacion.Visibility = Visibility.Hidden;
                 LabelSimulacionGuardada.Visibility = Visibility.Hidden;
                 MostrarReporte.Visibility = Visibility.Hidden;
+                
             }
 
             List<Negocio> negocios = new List<Negocio>();
@@ -363,7 +382,8 @@ namespace Entrega3Grupo1
             int pMax = Convert.ToInt32(PrecioMax.Text);
             int pMin = Convert.ToInt32(PrecioMin.Text);
             string subCat = SubCategoria.Text;
-            Negocio negocioAcutal = new Negocio(nombre, areaNegocio, actual.numeroPiso, valArriendo, pMin, pMax, stock, canEmpl, cat, subCat);
+            Negocio negocioAcutal = new Negocio(nombre, areaNegocio, actual.numeroPiso, valArriendo, pMin, pMax, stock, canEmpl, cat, subCat, clientesDelDiaAnterior , clientesDeDia);
+            todosLosNegocios.Add(negocioAcutal);
             negocios.Add(negocioAcutal);
             actual.tiendasPorPiso = negocios;
             Bienvenido.Visibility = Visibility.Hidden;
@@ -392,13 +412,11 @@ namespace Entrega3Grupo1
             MostrarReporte.Visibility = Visibility.Hidden;
         }
 
-        private void TextBoxSueldoPromedio_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void ButtonSimular_Click(object sender, RoutedEventArgs e)
         {
+            FileStream fs = new FileStream("Reporte.txt", FileMode.OpenOrCreate);
+            StreamWriter fw = new StreamWriter(fs);
             Inicio.Visibility = Visibility.Hidden;
             Bienvenido.Visibility = Visibility.Hidden;
             LabelNombreMall.Visibility = Visibility.Hidden;
@@ -427,12 +445,97 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Visible;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Visible;
+            int dia = 1;
+            int clientesTotales = 0;
+            int gananciaTotal = 0;
+            while (dia <= 10)
+            {
+                Console.WriteLine("Simulacion del dia: " + dia);
+                fw.WriteLine("Simulacion del dia: " + dia);
+                //Cantidad de clientes recepcionados y ganancias, promedio y del dia
 
+                int clientesdeldia = 0;
+                double gananciadeldia = 0;
+
+                foreach (Negocio n in todosLosNegocios)
+                {
+                    CalcularClientes(n);
+                    CalcularGanancia(n);
+                    n.gananciatotal = n.gananciatotal + n.ganancias; //Ganancias seria las ganancias de cada dia del negocio
+                    n.clientesTotales = n.clientesTotales + n.clientesDelDia;
+                    clientesdeldia = clientesdeldia + n.clientesDelDia;
+                    gananciadeldia = gananciadeldia + n.ganancias;
+
+                }
+
+                double gananciamaxima = -9999999999999999;
+                double gananciaminima = 9999999999999;
+                int clientesmaximos = 0;
+                int clientesminimos = 999999999;
+                string nombredelatiendacmax = "";
+                string nombredelatiendacmin = "";
+                string nombredelatiendagmax = "";
+                string nombredelatiendagmin = "";
+
+                //Locales con mayor y menor cantidad de clientes atendidos
+                foreach (Negocio n in todosLosNegocios)
+                {
+                    if (n.clientesDelDia > clientesmaximos)
+                    {
+                        clientesmaximos = n.clientesDelDia;
+                        nombredelatiendacmax = n.nombreNegocio;
+                    }
+                    if (n.clientesDelDia < clientesminimos)
+                    {
+                        clientesminimos = n.clientesDelDia;
+                        nombredelatiendacmin = n.nombreNegocio;
+                    }
+                    if (n.ganancias > gananciamaxima)
+                    {
+                        gananciamaxima = n.ganancias;
+                        nombredelatiendagmax = n.nombreNegocio;
+                    }
+                    if (n.ganancias < gananciaminima)
+                    {
+                        gananciaminima = n.ganancias;
+                        nombredelatiendagmin = n.nombreNegocio;
+                    }
+                }
+
+                clientesTotales = clientesTotales + clientesdeldia;
+                gananciaTotal = Convert.ToInt32(gananciaTotal + gananciadeldia);
+
+                Console.WriteLine("La cantidad de clientes del dia " + dia + " fue de " + clientesdeldia);
+                Console.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + " es de" + (clientesTotales / dia));
+
+                Console.WriteLine("La ganancia del dia " + dia + " fue de " + gananciadeldia);
+                Console.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
+
+                Console.WriteLine("La tienda con mas clientes en el dia " + dia + " fue " + nombredelatiendacmax);
+                Console.WriteLine("La tienda con menos clientes en el dia " + dia + " fue " + nombredelatiendacmin);
+
+                Console.WriteLine("La tienda con mas ganancias en el dia " + dia + " fue " + nombredelatiendagmax + " con una ganancia de " + gananciamaxima);
+                Console.WriteLine("La tienda con menos ganancias en el dia " + dia + " fue " + nombredelatiendagmax + "con una ganancia de " + gananciaminima);
+
+                fw.WriteLine("La cantidad de clientes del dia " + dia + " fue de " + clientesdeldia);
+                fw.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + " es de" + (clientesTotales / dia));
+
+                fw.WriteLine("La ganancia del dia " + dia + " fue de " + gananciadeldia);
+                fw.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
+
+                fw.WriteLine("La tienda con mas clientes en el dia " + dia + " fue " + nombredelatiendacmax);
+                fw.WriteLine("La tienda con menos clientes en el dia " + dia + " fue " + nombredelatiendacmin);
+
+                fw.WriteLine("La tienda con mas ganancias en el dia " + dia + " fue " + nombredelatiendagmax + " con una ganancia de " + gananciamaxima);
+                fw.WriteLine("La tienda con menos ganancias en el dia " + dia + " fue " + nombredelatiendagmax + "con una ganancia de " + gananciaminima);
+
+                dia = dia + 1;
+
+            }
         }
 
         private void MostrarReporte_Click(object sender, RoutedEventArgs e)
@@ -465,10 +568,8 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
-           
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
 
@@ -504,7 +605,6 @@ namespace Entrega3Grupo1
             TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
-            LabelLocalesEnPiso.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;

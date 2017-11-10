@@ -18,6 +18,7 @@
         <Button x:Name="CrearPisoSobreNivel" Content="Crear Piso Sobre Nivel" HorizontalAlignment="Left" Height="32" Margin="64,123,0,0" VerticalAlignment="Top" Width="157" Click="CrearPisoSobreNivel_Click" />
         <Button x:Name="CrearSubterraneo" Content="Crear Piso Subterraneo" HorizontalAlignment="Left" Height="32" Margin="296,123,0,0" VerticalAlignment="Top" Width="157" Click="CrearSubterraneo_Click"  />
         <Label x:Name="LabelAreaPiso" Content="Ingrese el area del piso"  HorizontalAlignment="Left" Margin="25,67,0,0" VerticalAlignment="Top" Width="232" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="31"/>
+        <Label x:Name="LabelCantidadNegocios" Content="Ingrese la cantidad de Tiendas"  HorizontalAlignment="Left" Margin="25,109,0,0" VerticalAlignment="Top" Width="232" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="31"/>
         <TextBox x:Name="AreaPiso" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="CrearPisoSobre" Content="Crear Piso" HorizontalAlignment="Left" Height="32" Margin="56,214,0,0" VerticalAlignment="Top" Width="157" Click="CrearPisoSobre_Click"  />
         <Button x:Name="CrearPisoSub" Content="Crear Piso" HorizontalAlignment="Left" Height="32" Margin="56,214,0,0" VerticalAlignment="Top" Width="157" Click="CrearPisoSub_Click"  />
@@ -33,14 +34,14 @@
         <TextBox x:Name="SubCategoria" HorizontalAlignment="Left" Height="23" Margin="374,71,0,0" TextWrapping="Wrap" Text="SubCategoria" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="BotonAgregarNegocio" Content="Agregar Negocio" HorizontalAlignment="Left" Margin="56,160,0,0" VerticalAlignment="Top" Width="152" Height="24" Click="BotonAgregarNegocio_Click" />
         <Button x:Name="BotonFinalizarNegocios" Content="Finalizar Negocios" HorizontalAlignment="Left" Margin="301,160,0,0" VerticalAlignment="Top" Width="171" Height="24" Click="FinalizarNegocios_Click" />
-        <TextBox x:Name="TextBoxSueldoPromedio" HorizontalAlignment="Left" Height="34" Margin="31,167,0,0" TextWrapping="Wrap" Text="Sueldo promedio:" VerticalAlignment="Top" Width="148" TextChanged="TextBoxSueldoPromedio_TextChanged"/>
-        <TextBox x:Name="TextBoxCantidadDeTiendasPorPiso" HorizontalAlignment="Left" Height="34" Margin="184,200,0,0" TextWrapping="Wrap" Text="Cantidad de tiendas?" VerticalAlignment="Top" Width="153"/>
+        <TextBox x:Name="TextBoxSueldoPromedio" HorizontalAlignment="Left" Height="25" Margin="338,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="TextBoxCantidadDeTiendasPorPiso" HorizontalAlignment="Left" Height="26" Margin="338,109,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="153"/>
         <Label x:Name="LabelPisoFinalizado" Content="SE LLENO EL PISO, FINALIZE" HorizontalAlignment="Left" Margin="85,121,0,0" VerticalAlignment="Top" Width="197"/>
-        <Label x:Name="LabelLocalesEnPiso" Content="Locales en este piso:" HorizontalAlignment="Left" Margin="191,175,0,0" VerticalAlignment="Top"/>
         <Button x:Name="ButtonSimular" Content="SIMULAR!" HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="149" Click="ButtonSimular_Click" Height="46"/>
         <Button x:Name="MostrarReporte" Content="Mostrar reporte" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="96" Height="34" Click="MostrarReporte_Click"/>
         <Button x:Name="GuardarSimulacion" Content="Guardar simulacion&#xD;&#xA;" HorizontalAlignment="Left" Margin="143,33,0,0" VerticalAlignment="Top" Width="114" Click="GuardarSimulacion_Click"/>
         <Label x:Name="LabelSimulacionGuardada" Content="Simulacion guardada!" HorizontalAlignment="Left" Margin="146,79,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelSueldoProm" Content="Ingrese un sueldo Promedio para el Mall" HorizontalAlignment="Left" Margin="25,166,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Window>
