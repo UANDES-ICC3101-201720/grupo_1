@@ -13,11 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 namespace Entrega3Grupo1
 {
-
+    [Serializable]
     public partial class MainWindow : Window
     {
         public static void CalcularClientes(Negocio n)
@@ -36,6 +37,7 @@ namespace Entrega3Grupo1
             double ganancia = (ventaPromedio * n.clientesDelDia) - (n.numEmpleados + costoArriendo);
             n.ganancias = ganancia;
         }
+        Mall a = new Mall("",0,0);
         List<Negocio> todosLosNegocios = new List<Negocio>();
         List<Piso> pisoSobreNivel = new List<Piso>();
         List<Piso> pisoSubt = new List<Piso>();
@@ -45,6 +47,16 @@ namespace Entrega3Grupo1
         public MainWindow()
         {
             InitializeComponent();
+            string path = Directory.GetCurrentDirectory();
+            string[] filePaths = Directory.GetFiles(path, "*.txt");
+            foreach (string file in filePaths)
+            {
+                string nombre = System.IO.Path.GetFileName(file);
+                if (nombre == "Reporte.txt") { }
+                else { CargarArchivos.Items.Add(nombre); }
+                
+            }
+            BotonVolver.Visibility = Visibility.Hidden;
             Bienvenido.Visibility = Visibility.Visible;
             Inicio.Visibility = Visibility.Visible;
             TxtBoxHorasMall.Visibility = Visibility.Hidden;
@@ -84,6 +96,7 @@ namespace Entrega3Grupo1
             InformacionPorLocal.Visibility = Visibility.Hidden;
             InformeLocal.Visibility = Visibility.Hidden;
             button.Visibility = Visibility.Hidden;
+            NombreArchivo.Visibility = Visibility.Hidden;
         }
 
         private void Inicio_Click(object sender, RoutedEventArgs e)
@@ -103,6 +116,8 @@ namespace Entrega3Grupo1
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Hidden;
             LabelSueldoProm.Visibility = Visibility.Visible;
+            ButonCargar.Visibility = Visibility.Hidden;
+            CargarArchivos.Visibility = Visibility.Hidden;
         }
 
 
@@ -121,7 +136,7 @@ namespace Entrega3Grupo1
             string nombre = TxtBoxNombreMall.Text;
             int horas = Convert.ToInt32(TxtBoxHorasMall.Text);
             sueldoPromedio = Convert.ToInt32(TextBoxSueldoPromedio.Text);
-            new Mall(nombre, horas, sueldoPromedio);
+            a = new Mall(nombre, horas, sueldoPromedio);
             CrearPisoSobreNivel.Visibility = Visibility.Visible;
             FinalizarPisos.Visibility = Visibility.Visible;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
@@ -457,6 +472,7 @@ namespace Entrega3Grupo1
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             MostrarReporte.Visibility = Visibility.Visible;
             InformacionPorLocal.Visibility = Visibility.Visible;
+            NombreArchivo.Visibility = Visibility.Visible;
             InformeLocal.Visibility = Visibility.Hidden;
             int dia = 1;
             int clientesTotales = 0;
@@ -583,6 +599,9 @@ namespace Entrega3Grupo1
             GuardarSimulacion.Visibility = Visibility.Hidden;
             LabelSimulacionGuardada.Visibility = Visibility.Hidden;
             Reporte.Visibility = Visibility.Visible;
+            BotonVolver.Visibility = Visibility.Visible;
+            InformacionPorLocal.Visibility = Visibility.Hidden;
+            NombreArchivo.Visibility = Visibility.Hidden;
         }
 
         private void GuardarSimulacion_Click(object sender, RoutedEventArgs e)
@@ -616,9 +635,16 @@ namespace Entrega3Grupo1
             TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
             LabelPisoFinalizado.Visibility = Visibility.Hidden;
             ButtonSimular.Visibility = Visibility.Hidden;
-            MostrarReporte.Visibility = Visibility.Hidden;
-            GuardarSimulacion.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Visible;
+            GuardarSimulacion.Visibility = Visibility.Visible;
             LabelSimulacionGuardada.Visibility = Visibility.Visible;
+            NombreArchivo.Visibility = Visibility.Visible;
+            GuardarSimulacionCompleta guardar = new GuardarSimulacionCompleta(a,todosLosNegocios, pisoSobreNivel,pisoSubt,contadorPisosSobre,contadorPisosSub);
+            string nombre = NombreArchivo.Text + ".txt";
+            FileStream fs =File.Open(nombre, FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(fs, guardar);
+
         }
 
         private void Salir_Click(object sender, RoutedEventArgs e)
@@ -638,6 +664,7 @@ namespace Entrega3Grupo1
             MostrarReporte.Visibility = Visibility.Hidden;
             InformeLocal.Visibility = Visibility.Hidden;
             button.Visibility = Visibility.Visible;
+            BotonVolver.Visibility = Visibility.Visible;
         }
 
 
@@ -675,6 +702,96 @@ namespace Entrega3Grupo1
             MostrarReporte.Visibility = Visibility.Hidden;
             InformeLocal.Visibility = Visibility.Visible;
             button.Visibility = Visibility.Hidden;
+            BotonVolver.Visibility = Visibility.Visible;
+        }
+
+        private void Volver(object sender, RoutedEventArgs e)
+        {
+            Inicio.Visibility = Visibility.Hidden;
+            Bienvenido.Visibility = Visibility.Hidden;
+            LabelNombreMall.Visibility = Visibility.Hidden;
+            LabelHoraMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            TxtBoxHorasMall.Visibility = Visibility.Hidden;
+            TxtBoxNombreMall.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            LabelAreaPiso.Visibility = Visibility.Hidden;
+            AreaPiso.Visibility = Visibility.Hidden;
+            CrearPisoSobre.Visibility = Visibility.Hidden;
+            CrearPisoSub.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Hidden;
+            NombreNegocio.Visibility = Visibility.Hidden;
+            AreaNegocio.Visibility = Visibility.Hidden;
+            CantidadEmpleados.Visibility = Visibility.Hidden;
+            Categoria.Visibility = Visibility.Hidden;
+            PrecioMax.Visibility = Visibility.Hidden;
+            PrecioMin.Visibility = Visibility.Hidden;
+            ValorArriendo.Visibility = Visibility.Hidden;
+            Stock.Visibility = Visibility.Hidden;
+            SubCategoria.Visibility = Visibility.Hidden;
+            BotonAgregarNegocio.Visibility = Visibility.Hidden;
+            BotonFinalizarNegocios.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            ButtonSimular.Visibility = Visibility.Hidden;
+            GuardarSimulacion.Visibility = Visibility.Visible;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Visible;
+            InformacionPorLocal.Visibility = Visibility.Visible;
+            InformeLocal.Visibility = Visibility.Hidden;
+            Reporte.Visibility = Visibility.Hidden;
+        }
+
+        private void Cargar(object sender, RoutedEventArgs e)
+        {
+            GuardarSimulacionCompleta g;
+            string nombre = Convert.ToString(CargarArchivos.SelectedItem);
+            FileStream fs = new FileStream(nombre,FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
+            g = (GuardarSimulacionCompleta) bf.Deserialize(fs);
+            a = g.a;
+            todosLosNegocios = g.todosLosNegocios;
+            pisoSobreNivel = g.pisoSobreNivel;
+            pisoSubt = g.pisoSubt;
+            contadorPisosSobre = g.contadorPisosSobre;
+            contadorPisosSub = g.contadorPisosSub;
+            Bienvenido.Visibility = Visibility.Hidden;
+            Inicio.Visibility = Visibility.Hidden;
+            TxtBoxHorasMall.Visibility = Visibility.Hidden;
+            TxtBoxNombreMall.Visibility = Visibility.Hidden;
+            LabelHoraMall.Visibility = Visibility.Hidden;
+            LabelNombreMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            LabelAreaPiso.Visibility = Visibility.Hidden;
+            AreaPiso.Visibility = Visibility.Hidden;
+            CrearPisoSobreNivel.Visibility = Visibility.Hidden;
+            CrearSubterraneo.Visibility = Visibility.Hidden;
+            CrearPisoSobre.Visibility = Visibility.Hidden;
+            NombreNegocio.Visibility = Visibility.Hidden;
+            PrecioMax.Visibility = Visibility.Hidden;
+            PrecioMin.Visibility = Visibility.Hidden;
+            ValorArriendo.Visibility = Visibility.Hidden;
+            Categoria.Visibility = Visibility.Hidden;
+            SubCategoria.Visibility = Visibility.Hidden;
+            CantidadEmpleados.Visibility = Visibility.Hidden;
+            AreaNegocio.Visibility = Visibility.Hidden;
+            Stock.Visibility = Visibility.Hidden;
+            FinalizarPisos.Visibility = Visibility.Hidden;
+            BotonAgregarNegocio.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            LabelPisoFinalizado.Visibility = Visibility.Hidden;
+            TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
+            ButtonSimular.Visibility = Visibility.Visible;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
+            NombreArchivo.Visibility = Visibility.Hidden;
+            ButonCargar.Visibility = Visibility.Hidden;
+            CargarArchivos.Visibility = Visibility.Hidden;
         }
     }
 }

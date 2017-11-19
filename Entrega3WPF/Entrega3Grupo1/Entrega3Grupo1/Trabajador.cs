@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entrega3Grupo1
 {
-    class Trabajador
+    [Serializable]
+    public class Trabajador
     {
         string nombreTrabajador;
         int rutTrabajador;

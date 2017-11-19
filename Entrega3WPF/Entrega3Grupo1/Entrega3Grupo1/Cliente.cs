@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entrega3Grupo1
 
-{
+{   [Serializable]
     public class Cliente
     {
 

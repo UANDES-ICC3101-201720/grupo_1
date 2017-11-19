@@ -11,6 +11,7 @@ namespace Entrega3Grupo1
     /// <summary>
     /// Lógica de interacción para App.xaml
     /// </summary>
+    [Serializable]
     public partial class App : Application
     {
     }
