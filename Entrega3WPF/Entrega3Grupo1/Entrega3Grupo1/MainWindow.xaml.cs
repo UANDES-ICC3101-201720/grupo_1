@@ -97,6 +97,8 @@ namespace Entrega3Grupo1
             InformeLocal.Visibility = Visibility.Hidden;
             button.Visibility = Visibility.Hidden;
             NombreArchivo.Visibility = Visibility.Hidden;
+            BotonMostrarTiendas.Visibility = Visibility.Hidden;
+            
         }
 
         private void Inicio_Click(object sender, RoutedEventArgs e)
@@ -118,6 +120,7 @@ namespace Entrega3Grupo1
             LabelSueldoProm.Visibility = Visibility.Visible;
             ButonCargar.Visibility = Visibility.Hidden;
             CargarArchivos.Visibility = Visibility.Hidden;
+            
         }
 
 
@@ -474,6 +477,8 @@ namespace Entrega3Grupo1
             InformacionPorLocal.Visibility = Visibility.Visible;
             NombreArchivo.Visibility = Visibility.Visible;
             InformeLocal.Visibility = Visibility.Hidden;
+            BotonMostrarTiendas.Visibility = Visibility.Visible;
+           
             int dia = 1;
             int clientesTotales = 0;
             int gananciaTotal = 0;
@@ -792,6 +797,20 @@ namespace Entrega3Grupo1
             NombreArchivo.Visibility = Visibility.Hidden;
             ButonCargar.Visibility = Visibility.Hidden;
             CargarArchivos.Visibility = Visibility.Hidden;
+            
+        }
+
+      
+
+        private void BotonMostrarTiendas_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxNegocios.ItemsSource = todosLosNegocios;
+            ListBoxNegocios.Visibility = Visibility.Visible;
+        }
+
+        private void ListBoxNegocios_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

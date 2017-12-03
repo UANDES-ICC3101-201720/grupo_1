@@ -43,6 +43,9 @@ namespace Entrega3Grupo1
             this.clientesDiaAnterior = clientesDiaAnterior;
             this.clientesDelDia = clientesDelDia;
         }
-
+        public override string ToString()
+        {
+            return nombreNegocio;
+        }
     }
 }

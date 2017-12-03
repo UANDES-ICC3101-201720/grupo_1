@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Entrega3Grupo1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350.075" Width="536.097">
+        Title="MainWindow" Height="357.913" Width="541.321">
     <Grid>
         <TextBox x:Name="InformeLocal" HorizontalAlignment="Left" Height="271" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="518" />
         <TextBox x:Name="Reporte" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="256" Width="508"/>
@@ -51,6 +51,8 @@
         <Button x:Name="BotonVolver" Content="Volver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="25,271,0,0" Height="33" Click="Volver"/>
         <TextBox x:Name="NombreArchivo" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="Nombre Archivo" VerticalAlignment="Top" Width="106" Margin="176,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="CargarArchivos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="76,206,0,0" Height="18" />
+        <Button x:Name="BotonMostrarTiendas" Content="Mostrar tiendas&#xD;&#xA;" HorizontalAlignment="Left" Margin="13,220,0,0" VerticalAlignment="Top" Width="108" Click="BotonMostrarTiendas_Click"/>
+        <ListBox x:Name="ListBoxNegocios" HorizontalAlignment="Left" Height="100" Margin="25,98,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>
