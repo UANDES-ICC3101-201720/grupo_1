@@ -45,7 +45,7 @@ namespace Entrega3Grupo1
         }
         public override string ToString()
         {
-            return nombreNegocio;
+            return "Nombre: " + nombreNegocio + " | Cantidad de Empleados: " + numEmpleados + " | Categoria: " + cat + " | Piso: " + piso + " | Area del Local: " + areaNegocio + " | Precio Min/Max: " + precioMin + "/" + precioMax + " | Costo arriendo: " + precioArriendo;
         }
     }
 }

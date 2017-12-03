@@ -56,6 +56,10 @@ namespace Entrega3Grupo1
                 else { CargarArchivos.Items.Add(nombre); }
                 
             }
+            // Fondo de pantalla
+
+
+            LabelSeleccioneArchivo.Visibility = Visibility.Visible;
             BotonVolver.Visibility = Visibility.Hidden;
             Bienvenido.Visibility = Visibility.Visible;
             Inicio.Visibility = Visibility.Visible;
@@ -97,7 +101,7 @@ namespace Entrega3Grupo1
             InformeLocal.Visibility = Visibility.Hidden;
             button.Visibility = Visibility.Hidden;
             NombreArchivo.Visibility = Visibility.Hidden;
-            BotonMostrarTiendas.Visibility = Visibility.Hidden;
+           
             
         }
 
@@ -120,7 +124,8 @@ namespace Entrega3Grupo1
             LabelSueldoProm.Visibility = Visibility.Visible;
             ButonCargar.Visibility = Visibility.Hidden;
             CargarArchivos.Visibility = Visibility.Hidden;
-            
+            LabelSeleccioneArchivo.Visibility = Visibility.Hidden;
+
         }
 
 
@@ -477,7 +482,7 @@ namespace Entrega3Grupo1
             InformacionPorLocal.Visibility = Visibility.Visible;
             NombreArchivo.Visibility = Visibility.Visible;
             InformeLocal.Visibility = Visibility.Hidden;
-            BotonMostrarTiendas.Visibility = Visibility.Visible;
+            
            
             int dia = 1;
             int clientesTotales = 0;
@@ -670,6 +675,7 @@ namespace Entrega3Grupo1
             InformeLocal.Visibility = Visibility.Hidden;
             button.Visibility = Visibility.Visible;
             BotonVolver.Visibility = Visibility.Visible;
+            NombreArchivo.Visibility = Visibility.Hidden;
         }
 
 
@@ -802,13 +808,11 @@ namespace Entrega3Grupo1
 
       
 
-        private void BotonMostrarTiendas_Click(object sender, RoutedEventArgs e)
-        {
-            ListBoxNegocios.ItemsSource = todosLosNegocios;
-            ListBoxNegocios.Visibility = Visibility.Visible;
-        }
+        
 
-        private void ListBoxNegocios_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        
+
+        private void ListBoxNegocios_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -1,0 +1,99 @@
+Simulacion del dia: 1
+La cantidad de clientes del dia 1 fue de 4
+La cantidad de clientes promedio hasta el dia 1 es de4
+La ganancia del dia 1 fue de -108
+La ganancia promedio hasta el dia 1 es de -108
+La tienda con mas clientes en el dia 1 fue Juanma
+La tienda con menos clientes en el dia 1 fue Juanma
+La tienda con mas ganancias en el dia 1 fue Juanma con una ganancia de -108
+La tienda con menos ganancias en el dia 1 fue Juanmacon una ganancia de -108
+Simulacion del dia: 2
+La cantidad de clientes del dia 2 fue de 6
+La cantidad de clientes promedio hasta el dia 2 es de5
+La ganancia del dia 2 fue de -84
+La ganancia promedio hasta el dia 2 es de -96
+La tienda con mas clientes en el dia 2 fue Juanma
+La tienda con menos clientes en el dia 2 fue Juanma
+La tienda con mas ganancias en el dia 2 fue Juanma con una ganancia de -84
+La tienda con menos ganancias en el dia 2 fue Juanmacon una ganancia de -84
+Simulacion del dia: 3
+La cantidad de clientes del dia 3 fue de 7
+La cantidad de clientes promedio hasta el dia 3 es de5
+La ganancia del dia 3 fue de -72
+La ganancia promedio hasta el dia 3 es de -88
+La tienda con mas clientes en el dia 3 fue Juanma
+La tienda con menos clientes en el dia 3 fue Juanma
+La tienda con mas ganancias en el dia 3 fue Juanma con una ganancia de -72
+La tienda con menos ganancias en el dia 3 fue Juanmacon una ganancia de -72
+Simulacion del dia: 4
+La cantidad de clientes del dia 4 fue de 7
+La cantidad de clientes promedio hasta el dia 4 es de6
+La ganancia del dia 4 fue de -72
+La ganancia promedio hasta el dia 4 es de -84
+La tienda con mas clientes en el dia 4 fue Juanma
+La tienda con menos clientes en el dia 4 fue Juanma
+La tienda con mas ganancias en el dia 4 fue Juanma con una ganancia de -72
+La tienda con menos ganancias en el dia 4 fue Juanmacon una ganancia de -72
+Simulacion del dia: 5
+La cantidad de clientes del dia 5 fue de 7
+La cantidad de clientes promedio hasta el dia 5 es de6
+La ganancia del dia 5 fue de -72
+La ganancia promedio hasta el dia 5 es de -81
+La tienda con mas clientes en el dia 5 fue Juanma
+La tienda con menos clientes en el dia 5 fue Juanma
+La tienda con mas ganancias en el dia 5 fue Juanma con una ganancia de -72
+La tienda con menos ganancias en el dia 5 fue Juanmacon una ganancia de -72
+Simulacion del dia: 6
+La cantidad de clientes del dia 6 fue de 7
+La cantidad de clientes promedio hasta el dia 6 es de6
+La ganancia del dia 6 fue de -72
+La ganancia promedio hasta el dia 6 es de -80
+La tienda con mas clientes en el dia 6 fue Juanma
+La tienda con menos clientes en el dia 6 fue Juanma
+La tienda con mas ganancias en el dia 6 fue Juanma con una ganancia de -72
+La tienda con menos ganancias en el dia 6 fue Juanmacon una ganancia de -72
+Simulacion del dia: 7
+La cantidad de clientes del dia 7 fue de 7
+La cantidad de clientes promedio hasta el dia 7 es de6
+La ganancia del dia 7 fue de -72
+La ganancia promedio hasta el dia 7 es de -78
+La tienda con mas clientes en el dia 7 fue Juanma
+La tienda con menos clientes en el dia 7 fue Juanma
+La tienda con mas ganancias en el dia 7 fue Juanma con una ganancia de -72
+La tienda con menos ganancias en el dia 7 fue Juanmacon una ganancia de -72
+Simulacion del dia: 8
+La cantidad de clientes del dia 8 fue de 7
+La cantidad de clientes promedio hasta el dia 8 es de6
+La ganancia del dia 8 fue de -72
+La ganancia promedio hasta el dia 8 es de -78
+La tienda con mas clientes en el dia 8 fue Juanma
+La tienda con menos clientes en el dia 8 fue Juanma
+La tienda con mas ganancias en el dia 8 fue Juanma con una ganancia de -72
+La tienda con menos ganancias en el dia 8 fue Juanmacon una ganancia de -72
+Simulacion del dia: 9
+La cantidad de clientes del dia 9 fue de 7
+La cantidad de clientes promedio hasta el dia 9 es de6
+La ganancia del dia 9 fue de -72
+La ganancia promedio hasta el dia 9 es de -77
+La tienda con mas clientes en el dia 9 fue Juanma
+La tienda con menos clientes en el dia 9 fue Juanma
+La tienda con mas ganancias en el dia 9 fue Juanma con una ganancia de -72
+La tienda con menos de -60
+Simulacion del dia: 9
+La cantidad de clientes del dia 9 fue de 16
+La cantidad de clientes promedio hasta el dia 9 es de15
+La ganancia del dia 9 fue de -120
+La ganancia promedio hasta el dia 9 es de -130
+La tienda con mas clientes en el dia 9 fue Juanma y asociados
+La tienda con menos clientes en el dia 9 fue Juanma y asociados
+La tienda con mas ganancias en el dia 9 fue Juanma y asociados con una ganancia de -60
+La tienda con menos ganancias en el dia 9 fue Juanma y asociadoscon una ganancia de -60
+Simulacion del dia: 10
+La cantidad de clientes del dia 10 fue de 16
+La cantidad de clientes promedio hasta el dia 10 es de15
+La ganancia del dia 10 fue de -120
+La ganancia promedio hasta el dia 10 es de -129
+La tienda con mas clientes en el dia 10 fue Juanma y asociados
+La tienda con menos clientes en el dia 10 fue Juanma y asociados
+La tienda con mas ganancias en el dia 10 fue Juanma y asociados con una ganancia de -60
+La tienda con menos ganancias en el dia 10 fue Juanma y asociadoscon un
