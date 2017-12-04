@@ -8,6 +8,7 @@ namespace Entrega3Grupo1
 {   [Serializable]
     public class Negocio
     {
+        
         public string nombreNegocio;
         public int numeroClientes;
         public int piso;

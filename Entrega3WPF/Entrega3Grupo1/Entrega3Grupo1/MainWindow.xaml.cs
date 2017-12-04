@@ -21,6 +21,20 @@ namespace Entrega3Grupo1
     [Serializable]
     public partial class MainWindow : Window
     {
+        private void SetImagen()
+        {
+            Image image = new Image();
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = new System.Uri("pack://application:,,,/FondoPantalla/FondoPantallaWPF.jpg");
+            bi.EndInit();
+            image.Source = bi;
+
+            ImageBrush ib = new ImageBrush();
+            ib.ImageSource = bi;
+
+            Fondopantalla.Fill = ib;
+        }
         public static void CalcularClientes(Negocio n)
         {
             Random rn = new Random();
@@ -47,6 +61,7 @@ namespace Entrega3Grupo1
         public MainWindow()
         {
             InitializeComponent();
+            SetImagen();
             string path = Directory.GetCurrentDirectory();
             string[] filePaths = Directory.GetFiles(path, "*.txt");
             foreach (string file in filePaths)
@@ -504,6 +519,7 @@ namespace Entrega3Grupo1
                     n.clientesTotales = n.clientesTotales + n.clientesDelDia;
                     clientesdeldia = clientesdeldia + n.clientesDelDia;
                     gananciadeldia = gananciadeldia + n.ganancias;
+                    
 
                 }
 
@@ -557,7 +573,7 @@ namespace Entrega3Grupo1
                 fw.WriteLine("La cantidad de clientes del dia " + dia + " fue de " + clientesdeldia);
                 fw.WriteLine("La cantidad de clientes promedio hasta el dia " + dia + " es de" + (clientesTotales / dia));
 
-                fw.WriteLine("La ganancia del dia " + dia + " fue de " + gananciadeldia);
+                fw.WriteLine("La ganancia del dia" + dia + " fue de " + gananciadeldia);
                 fw.WriteLine("La ganancia promedio hasta el dia " + dia + " es de " + (gananciaTotal / dia));
 
                 fw.WriteLine("La tienda con mas clientes en el dia " + dia + " fue " + nombredelatiendacmax);
@@ -705,7 +721,8 @@ namespace Entrega3Grupo1
                 + "\nEl costo en arriendo del local: " + cArriendo
                 + "\nCosto en sueldos de empleados: " + sueldoEmpleados
                 + "\nLas ventas del local este día: " + vent
-                + "\nLa ganancia del local este día: " + ganancia
+                + "\nLa ganancia del local este dia " + ganancia               
+                
                 + "\nLa ganancia acumulada del local en toda la simulación: " + gananciat;
             TodosLosLocales.Visibility = Visibility.Hidden;
             InformacionPorLocal.Visibility = Visibility.Hidden;
