@@ -21,6 +21,8 @@ namespace Entrega3Grupo1
     [Serializable]
     public partial class MainWindow : Window
     {
+
+        //Fondo de pantalla
         private void SetImagen()
         {
             Image image = new Image();
@@ -71,9 +73,9 @@ namespace Entrega3Grupo1
                 else { CargarArchivos.Items.Add(nombre); }
                 
             }
-            // Fondo de pantalla
 
-
+            LabelAreaCompleta.Visibility = Visibility.Hidden;
+            LabelAreaDisponible.Visibility = Visibility.Hidden;
             LabelSeleccioneArchivo.Visibility = Visibility.Visible;
             BotonVolver.Visibility = Visibility.Hidden;
             Bienvenido.Visibility = Visibility.Visible;
@@ -378,12 +380,93 @@ namespace Entrega3Grupo1
         private void BotonAgregarNegocio_Click(object sender, RoutedEventArgs e)
         {
             Piso actual = pisoSobreNivel.Last();
+            LabelAreaDisponible.Visibility = Visibility.Visible;
+            LabelAreaDisponible.Content = "Area disponible: " + (actual.areaPiso - actual.areaUsada);            
             int clientesDeDia = 0;
             int clientesDelDiaAnterior = 0;
             int tiendasUsadas = actual.tiendasUsadas;
             int tiendasdisponibles = actual.cantidadTiendas;
             if (tiendasdisponibles == actual.tiendasUsadas)
             {
+                LabelAreaDisponible.Visibility = Visibility.Hidden;
+                LabelPisoFinalizado.Visibility = Visibility.Hidden;
+                NombreNegocio.Visibility = Visibility.Hidden;
+                PrecioMax.Visibility = Visibility.Hidden;
+                PrecioMin.Visibility = Visibility.Hidden;
+                ValorArriendo.Visibility = Visibility.Hidden;
+                Categoria.Visibility = Visibility.Hidden;
+                SubCategoria.Visibility = Visibility.Hidden;
+                CantidadEmpleados.Visibility = Visibility.Hidden;
+                AreaNegocio.Visibility = Visibility.Hidden;
+                Stock.Visibility = Visibility.Hidden;
+                CrearPisoSobreNivel.Visibility = Visibility.Visible;
+                FinalizarPisos.Visibility = Visibility.Visible;
+                TextBoxCantidadDeTiendasPorPiso.Visibility = Visibility.Hidden;
+                TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+                Bienvenido.Visibility = Visibility.Hidden;
+                Inicio.Visibility = Visibility.Hidden;
+                TxtBoxHorasMall.Visibility = Visibility.Hidden;
+                TxtBoxNombreMall.Visibility = Visibility.Hidden;
+                LabelHoraMall.Visibility = Visibility.Hidden;
+                LabelNombreMall.Visibility = Visibility.Hidden;
+                CrearMall.Visibility = Visibility.Hidden;
+                CrearSubterraneo.Visibility = Visibility.Visible;
+                LabelAreaPiso.Visibility = Visibility.Hidden;
+                AreaPiso.Visibility = Visibility.Hidden;
+                BotonAgregarNegocio.Visibility = Visibility.Hidden;
+                BotonFinalizarNegocios.Visibility = Visibility.Hidden;
+                GuardarSimulacion.Visibility = Visibility.Hidden;
+                LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+                MostrarReporte.Visibility = Visibility.Hidden;                
+            }
+            
+
+            List<Negocio> negocios = new List<Negocio>();
+            string nombre = NombreNegocio.Text;
+            int areaNegocio = Convert.ToInt32(AreaNegocio.Text);            
+            int valArriendo = Convert.ToInt32(ValorArriendo.Text);
+            int canEmpl = Convert.ToInt32(CantidadEmpleados.Text);
+            string cat = Categoria.Text;
+            int stock = Convert.ToInt32(Stock.Text);
+            int pMax = Convert.ToInt32(PrecioMax.Text);
+            int pMin = Convert.ToInt32(PrecioMin.Text);
+            string subCat = SubCategoria.Text;
+            List<double> gananciastotales = new List<double>();
+            Negocio negocioAcutal = new Negocio(nombre, areaNegocio, actual.numeroPiso, valArriendo, pMin, pMax, stock, canEmpl, cat, subCat, clientesDelDiaAnterior , clientesDeDia, gananciastotales);
+            todosLosNegocios.Add(negocioAcutal);
+            negocios.Add(negocioAcutal);
+            actual.tiendasPorPiso = negocios;
+            Bienvenido.Visibility = Visibility.Hidden;
+            Inicio.Visibility = Visibility.Hidden;
+            TxtBoxHorasMall.Visibility = Visibility.Hidden;
+            TxtBoxNombreMall.Visibility = Visibility.Hidden;
+            LabelHoraMall.Visibility = Visibility.Hidden;
+            LabelNombreMall.Visibility = Visibility.Hidden;
+            CrearMall.Visibility = Visibility.Hidden;
+            LabelAreaPiso.Visibility = Visibility.Hidden;
+            AreaPiso.Visibility = Visibility.Hidden;
+            CrearPisoSobre.Visibility = Visibility.Hidden;
+            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
+            NombreNegocio.Text = "Nombre Negocio";
+            PrecioMax.Text = "Precio Maximo";
+            PrecioMin.Text = "Precio Minimo";
+            ValorArriendo.Text = "Valor Arriendo";
+            Categoria.Text = "Categoria";
+            SubCategoria.Text = "SubCategoria";
+            CantidadEmpleados.Text = "Cantida Empleados";
+            AreaNegocio.Text = "Area Negocio";
+            Stock.Text = "Stock";
+            actual.tiendasUsadas = actual.tiendasUsadas + 1;
+            actual.areaUsada = actual.areaUsada + areaNegocio;
+            GuardarSimulacion.Visibility = Visibility.Hidden;
+            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
+            MostrarReporte.Visibility = Visibility.Hidden;
+            if (actual.areaPiso <= actual.areaUsada)
+            {
+                LabelAreaDisponible.Visibility = Visibility.Hidden;
+                todosLosNegocios.Remove(negocioAcutal);
+                negocios.Remove(negocioAcutal);
+                todosLosNegocios.Add(new Negocio(nombre, actual.areaUsada - actual.areaPiso, actual.numeroPiso, valArriendo, pMin, pMax, stock, canEmpl, cat, subCat, clientesDelDiaAnterior, clientesDeDia, gananciastotales));
                 LabelPisoFinalizado.Visibility = Visibility.Hidden;
                 NombreNegocio.Visibility = Visibility.Hidden;
                 PrecioMax.Visibility = Visibility.Hidden;
@@ -413,52 +496,18 @@ namespace Entrega3Grupo1
                 GuardarSimulacion.Visibility = Visibility.Hidden;
                 LabelSimulacionGuardada.Visibility = Visibility.Hidden;
                 MostrarReporte.Visibility = Visibility.Hidden;
-                
+                LabelAreaDisponible.Visibility = Visibility.Hidden;
             }
 
-            List<Negocio> negocios = new List<Negocio>();
-            string nombre = NombreNegocio.Text;
-            int areaNegocio = Convert.ToInt32(AreaNegocio.Text);
-            int valArriendo = Convert.ToInt32(ValorArriendo.Text);
-            int canEmpl = Convert.ToInt32(CantidadEmpleados.Text);
-            string cat = Categoria.Text;
-            int stock = Convert.ToInt32(Stock.Text);
-            int pMax = Convert.ToInt32(PrecioMax.Text);
-            int pMin = Convert.ToInt32(PrecioMin.Text);
-            string subCat = SubCategoria.Text;
-            Negocio negocioAcutal = new Negocio(nombre, areaNegocio, actual.numeroPiso, valArriendo, pMin, pMax, stock, canEmpl, cat, subCat, clientesDelDiaAnterior , clientesDeDia);
-            todosLosNegocios.Add(negocioAcutal);
-            negocios.Add(negocioAcutal);
-            actual.tiendasPorPiso = negocios;
-            Bienvenido.Visibility = Visibility.Hidden;
-            Inicio.Visibility = Visibility.Hidden;
-            TxtBoxHorasMall.Visibility = Visibility.Hidden;
-            TxtBoxNombreMall.Visibility = Visibility.Hidden;
-            LabelHoraMall.Visibility = Visibility.Hidden;
-            LabelNombreMall.Visibility = Visibility.Hidden;
-            CrearMall.Visibility = Visibility.Hidden;
-            LabelAreaPiso.Visibility = Visibility.Hidden;
-            AreaPiso.Visibility = Visibility.Hidden;
-            CrearPisoSobre.Visibility = Visibility.Hidden;
-            TextBoxSueldoPromedio.Visibility = Visibility.Hidden;
-            NombreNegocio.Text = "Nombre Negocio";
-            PrecioMax.Text = "Precio Maximo";
-            PrecioMin.Text = "Precio Minimo";
-            ValorArriendo.Text = "Valor Arriendo";
-            Categoria.Text = "Categoria";
-            SubCategoria.Text = "SubCategoria";
-            CantidadEmpleados.Text = "Cantida Empleados";
-            AreaNegocio.Text = "Area Negocio";
-            Stock.Text = "Stock";
-            actual.tiendasUsadas = actual.tiendasUsadas + 1;
-            GuardarSimulacion.Visibility = Visibility.Hidden;
-            LabelSimulacionGuardada.Visibility = Visibility.Hidden;
-            MostrarReporte.Visibility = Visibility.Hidden;
+
+
+
         }
 
 
         private void ButtonSimular_Click(object sender, RoutedEventArgs e)
         {
+            LabelAreaDisponible.Visibility = Visibility.Hidden;
             List<string> reporteCompleto = new List<string>();
             FileStream fs = new FileStream("Reporte.txt", FileMode.OpenOrCreate);
             StreamWriter fw = new StreamWriter(fs);
@@ -514,11 +563,12 @@ namespace Entrega3Grupo1
                 foreach (Negocio n in todosLosNegocios)
                 {
                     CalcularClientes(n);
-                    CalcularGanancia(n);
+                    CalcularGanancia(n);                    
                     n.gananciatotal = n.gananciatotal + n.ganancias; //Ganancias seria las ganancias de cada dia del negocio
                     n.clientesTotales = n.clientesTotales + n.clientesDelDia;
                     clientesdeldia = clientesdeldia + n.clientesDelDia;
                     gananciadeldia = gananciadeldia + n.ganancias;
+                    n.listaGanancias.Add(n.ganancias);
                     
 
                 }
@@ -592,6 +642,7 @@ namespace Entrega3Grupo1
 
         private void MostrarReporte_Click(object sender, RoutedEventArgs e)
         {
+
             Inicio.Visibility = Visibility.Hidden;
             Bienvenido.Visibility = Visibility.Hidden;
             LabelNombreMall.Visibility = Visibility.Hidden;
@@ -721,9 +772,19 @@ namespace Entrega3Grupo1
                 + "\nEl costo en arriendo del local: " + cArriendo
                 + "\nCosto en sueldos de empleados: " + sueldoEmpleados
                 + "\nLas ventas del local este día: " + vent
-                + "\nLa ganancia del local este dia " + ganancia               
-                
-                + "\nLa ganancia acumulada del local en toda la simulación: " + gananciat;
+                + "\nLa ganancia del local del día 1:" + neg.listaGanancias[0]
+                + "\nLa ganancia del local del día 2:" + neg.listaGanancias[1]
+                + "\nLa ganancia del local del día 3:" + neg.listaGanancias[2]
+                + "\nLa ganancia del local del día 4:" + neg.listaGanancias[3]
+                + "\nLa ganancia del local del día 5:" + neg.listaGanancias[4]
+                + "\nLa ganancia del local del día 6:" + neg.listaGanancias[5]
+                + "\nLa ganancia del local del día 7:" + neg.listaGanancias[6]
+                + "\nLa ganancia del local del día 8:" + neg.listaGanancias[7]
+                + "\nLa ganancia del local del día 9:" + neg.listaGanancias[8]
+                + "\nLa ganancia del local del día 10:" + neg.listaGanancias[9]
+
+
+            + "\nLa ganancia acumulada del local en toda la simulación: " + gananciat;
             TodosLosLocales.Visibility = Visibility.Hidden;
             InformacionPorLocal.Visibility = Visibility.Hidden;
             GuardarSimulacion.Visibility = Visibility.Hidden;

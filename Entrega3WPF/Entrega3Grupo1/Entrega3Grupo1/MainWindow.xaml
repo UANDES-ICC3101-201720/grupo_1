@@ -58,9 +58,11 @@
         <ComboBox x:Name="TodosLosLocales" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="189,105,0,0" Height="18" />
         <Button x:Name="button" Content="Seleccionar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="226,184,0,0" Click="button_Click"/>
         <Button x:Name="BotonVolver" Content="Volver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="25,271,0,0" Height="33" Click="Volver"/>
-        <TextBox x:Name="NombreArchivo" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="Nombre Archivo" VerticalAlignment="Top" Width="106" Margin="176,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="NombreArchivo" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="Nombre Archivo" VerticalAlignment="Top" Width="106" Margin="213,67,0,0" HorizontalContentAlignment="Center"/>
         <ComboBox x:Name="CargarArchivos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="41,214,0,0" Height="18" />
         <Label x:Name="LabelSeleccioneArchivo" Content="Si desea cargar, seleccione un archivo: " Margin="-1,185,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="LabelAreaCompleta" Content="Area completa! Se ha añadido la tienda con el area máxima del piso." HorizontalAlignment="Left" Margin="14,304,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelAreaDisponible" Content="Label" HorizontalAlignment="Left" Margin="230,174,0,0" VerticalAlignment="Top" Width="79"/>
 
     </Grid>
 

@@ -14,6 +14,7 @@ namespace Entrega3Grupo1
         public List<Negocio> tiendasPorPiso;
         public int cantidadTiendas;
         public int tiendasUsadas;
+        public int areaUsada = 0;
 
         public Piso(int numeroPiso, int areaPiso, List<Negocio> tiendasPorPiso, int cantidadTiendas, int tiendasUsadas)
         {

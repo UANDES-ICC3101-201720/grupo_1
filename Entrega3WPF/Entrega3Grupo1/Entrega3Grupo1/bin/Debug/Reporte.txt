@@ -1,83 +1,85 @@
 Simulacion del dia: 1
-La cantidad de clientes del dia 1 fue de 8
-La cantidad de clientes promedio hasta el dia 1 es de8
-La ganancia del dia 1 fue de -148
-La ganancia promedio hasta el dia 1 es de -148
-La tienda con mas clientes en el dia 1 fue JJ Johs
-La tienda con menos clientes en el dia 1 fue JJ Johs
-La tienda con mas ganancias en el dia 1 fue JJ Johs con una ganancia de -148
-La tienda con menos ganancias en el dia 1 fue JJ Johscon una ganancia de -148
+La cantidad de clientes del dia 1 fue de 0
+La cantidad de clientes promedio hasta el dia 1 es de0
+La ganancia del dia1 fue de -2895
+La ganancia promedio hasta el dia 1 es de -2895
+La tienda con mas clientes en el dia 1 fue 
+La tienda con menos clientes en el dia 1 fue wef
+La tienda con mas ganancias en el dia 1 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 1 fue wefcon una ganancia de -2895
 Simulacion del dia: 2
-La cantidad de clientes del dia 2 fue de 13
-La cantidad de clientes promedio hasta el dia 2 es de10
-La ganancia del dia 2 fue de -143
-La ganancia promedio hasta el dia 2 es de -145
-La tienda con mas clientes en el dia 2 fue JJ Johs
-La tienda con menos clientes en el dia 2 fue JJ Johs
-La tienda con mas ganancias en el dia 2 fue JJ Johs con una ganancia de -143
-La tienda con menos ganancias en el dia 2 fue JJ Johscon una ganancia de -143
+La cantidad de clientes del dia 2 fue de 0
+La cantidad de clientes promedio hasta el dia 2 es de0
+La ganancia del dia2 fue de -2895
+La ganancia promedio hasta el dia 2 es de -2895
+La tienda con mas clientes en el dia 2 fue 
+La tienda con menos clientes en el dia 2 fue wef
+La tienda con mas ganancias en el dia 2 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 2 fue wefcon una ganancia de -2895
 Simulacion del dia: 3
-La cantidad de clientes del dia 3 fue de 16
-La cantidad de clientes promedio hasta el dia 3 es de12
-La ganancia del dia 3 fue de -140
-La ganancia promedio hasta el dia 3 es de -143
-La tienda con mas clientes en el dia 3 fue JJ Johs
-La tienda con menos clientes en el dia 3 fue JJ Johs
-La tienda con mas ganancias en el dia 3 fue JJ Johs con una ganancia de -140
-La tienda con menos ganancias en el dia 3 fue JJ Johscon una ganancia de -140
+La cantidad de clientes del dia 3 fue de 0
+La cantidad de clientes promedio hasta el dia 3 es de0
+La ganancia del dia3 fue de -2895
+La ganancia promedio hasta el dia 3 es de -2895
+La tienda con mas clientes en el dia 3 fue 
+La tienda con menos clientes en el dia 3 fue wef
+La tienda con mas ganancias en el dia 3 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 3 fue wefcon una ganancia de -2895
 Simulacion del dia: 4
-La cantidad de clientes del dia 4 fue de 18
-La cantidad de clientes promedio hasta el dia 4 es de13
-La ganancia del dia 4 fue de -138
-La ganancia promedio hasta el dia 4 es de -142
-La tienda con mas clientes en el dia 4 fue JJ Johs
-La tienda con menos clientes en el dia 4 fue JJ Johs
-La tienda con mas ganancias en el dia 4 fue JJ Johs con una ganancia de -138
-La tienda con menos ganancias en el dia 4 fue JJ Johscon una ganancia de -138
+La cantidad de clientes del dia 4 fue de 0
+La cantidad de clientes promedio hasta el dia 4 es de0
+La ganancia del dia4 fue de -2895
+La ganancia promedio hasta el dia 4 es de -2895
+La tienda con mas clientes en el dia 4 fue 
+La tienda con menos clientes en el dia 4 fue wef
+La tienda con mas ganancias en el dia 4 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 4 fue wefcon una ganancia de -2895
 Simulacion del dia: 5
-La cantidad de clientes del dia 5 fue de 19
-La cantidad de clientes promedio hasta el dia 5 es de14
-La ganancia del dia 5 fue de -137
-La ganancia promedio hasta el dia 5 es de -141
-La tienda con mas clientes en el dia 5 fue JJ Johs
-La tienda con menos clientes en el dia 5 fue JJ Johs
-La tienda con mas ganancias en el dia 5 fue JJ Johs con una ganancia de -137
-La tienda con menos ganancias en el dia 5 fue JJ Johscon una ganancia de -137
+La cantidad de clientes del dia 5 fue de 0
+La cantidad de clientes promedio hasta el dia 5 es de0
+La ganancia del dia5 fue de -2895
+La ganancia promedio hasta el dia 5 es de -2895
+La tienda con mas clientes en el dia 5 fue 
+La tienda con menos clientes en el dia 5 fue wef
+La tienda con mas ganancias en el dia 5 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 5 fue wefcon una ganancia de -2895
 Simulacion del dia: 6
-La cantidad de clientes del dia 6 fue de 19
-La cantidad de clientes promedio hasta el dia 6 es de15
-La ganancia del dia 6 fue de -137
-La ganancia promedio hasta el dia 6 es de -140
-La tienda con mas clientes en el dia 6 fue JJ Johs
-La tienda con menos clientes en el dia 6 fue JJ Johs
-La tienda con mas ganancias en el dia 6 fue JJ Johs con una ganancia de -137
-La tienda con menos ganancias en el dia 6 fue JJ Johscon una ganancia de -137
+La cantidad de clientes del dia 6 fue de 0
+La cantidad de clientes promedio hasta el dia 6 es de0
+La ganancia del dia6 fue de -2895
+La ganancia promedio hasta el dia 6 es de -2895
+La tienda con mas clientes en el dia 6 fue 
+La tienda con menos clientes en el dia 6 fue wef
+La tienda con mas ganancias en el dia 6 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 6 fue wefcon una ganancia de -2895
 Simulacion del dia: 7
-La cantidad de clientes del dia 7 fue de 19
-La cantidad de clientes promedio hasta el dia 7 es de16
-La ganancia del dia 7 fue de -137
-La ganancia promedio hasta el dia 7 es de -140
-La tienda con mas clientes en el dia 7 fue JJ Johs
-La tienda con menos clientes en el dia 7 fue JJ Johs
-La tienda con mas ganancias en el dia 7 fue JJ Johs con una ganancia de -137
-La tienda con menos ganancias en el dia 7 fue JJ Johscon una ganancia de -137
+La cantidad de clientes del dia 7 fue de 0
+La cantidad de clientes promedio hasta el dia 7 es de0
+La ganancia del dia7 fue de -2895
+La ganancia promedio hasta el dia 7 es de -2895
+La tienda con mas clientes en el dia 7 fue 
+La tienda con menos clientes en el dia 7 fue wef
+La tienda con mas ganancias en el dia 7 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 7 fue wefcon una ganancia de -2895
 Simulacion del dia: 8
-La cantidad de clientes del dia 8 fue de 19
-La cantidad de clientes promedio hasta el dia 8 es de16
-La ganancia del dia 8 fue de -137
-La ganancia promedio hasta el dia 8 es de -139
-La tienda con mas clientes en el dia 8 fue JJ Johs
-La tienda con menos clientes en el dia 8 fue JJ Johs
-La tienda con mas ganancias en el dia 8 fue JJ Johs con una ganancia de -137
-La tienda con menos ganancias en el dia 8 fue JJ Johscon una ganancia de -137
+La cantidad de clientes del dia 8 fue de 0
+La cantidad de clientes promedio hasta el dia 8 es de0
+La ganancia del dia8 fue de -2895
+La ganancia promedio hasta el dia 8 es de -2895
+La tienda con mas clientes en el dia 8 fue 
+La tienda con menos clientes en el dia 8 fue wef
+La tienda con mas ganancias en el dia 8 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 8 fue wefcon una ganancia de -2895
 Simulacion del dia: 9
-La cantidad de clientes del dia 9 fue de 19
-La cantidad de clientes promedio hasta el dia 9 es de16
-La ganancia del dia 9 fue de -137
-La ganancia promedio hasta el dia 9 es de -139
-La tienda con mas clientes en el dia 9 fue JJ Johs
-La tienda con menos clientes en el dia 9 fue JJ Johs
-La tienda con made -60
+La cantidad de clientes del dia 9 fue de 0
+La cantidad de clientes promedio hasta el dia 9 es de0
+La ganancia del dia9 fue de -2895
+La ganancia promedio hasta el dia 9 es de -2895
+La tienda con mas clientes en el dia 9 fue 
+La tienda con menos clientes en el dia 9 fue wef
+La tienda con mas ganancias en el dia 9 fue wef con una ganancia de -2895
+La tienda con menos ganancias en el dia 9 fue wefcon una ganancia de -2895
+Simulacion del dia:de -60
 Simulacion del dia: 9
 La cantidad de clientes del dia 9 fue de 16
 La cantidad de clientes promedio hasta el dia 9 es de15

@@ -8,7 +8,7 @@ namespace Entrega3Grupo1
 {   [Serializable]
     public class Negocio
     {
-        
+        public List<double> listaGanancias;
         public string nombreNegocio;
         public int numeroClientes;
         public int piso;
@@ -29,7 +29,7 @@ namespace Entrega3Grupo1
         public int clientesTotales = 0;
 
 
-        public Negocio(string nombreNegocio, int areaNegocio, int piso, int precioArriendo, int precioMin, int precioMax, int stock, int numEmpleados, string cat, string subcat, int clientesDiaAnterior, int clientesDelDia)
+        public Negocio(string nombreNegocio, int areaNegocio, int piso, int precioArriendo, int precioMin, int precioMax, int stock, int numEmpleados, string cat, string subcat, int clientesDiaAnterior, int clientesDelDia, List<double> listaGanancias)
         {
             this.nombreNegocio = nombreNegocio;
             this.areaNegocio = areaNegocio;
@@ -43,6 +43,7 @@ namespace Entrega3Grupo1
             this.subcat = subcat;
             this.clientesDiaAnterior = clientesDiaAnterior;
             this.clientesDelDia = clientesDelDia;
+            this.listaGanancias = listaGanancias;
         }
         public override string ToString()
         {
