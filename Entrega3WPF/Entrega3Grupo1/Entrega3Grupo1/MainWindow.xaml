@@ -8,21 +8,26 @@
         mc:Ignorable="d"        
         Title="MainWindow" Height="357.913" Width="541.321">
 
-
-
-
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderThickness" Value="3"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="false">
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
 
     <Grid>
-
-        <Rectangle x:Name="Fondopantalla" Fill="#FFF4F4F5" Margin="0,0,0.2,0" Stroke="Black"/>
-
-        <TextBox x:Name="InformeLocal" HorizontalAlignment="Left" Height="271" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="518" />
+        <TextBox x:Name="InformeLocal" HorizontalAlignment="Left" Height="271" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="518" Margin="5,0,0,0" />
         <TextBox x:Name="Reporte" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="256" Width="508"/>
         <Button x:Name="Inicio" Content="Inicio" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="Inicio_Click" />
-        <Button x:Name="ButonCargar" Content="Cargar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="107" Click="Cargar" Margin="213,208,215.2,83" Height="37" />
+        <Button x:Name="ButonCargar" Content="Cargar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="107" Click="Cargar" Margin="317,223,109,67" Height="37" />
         <Label x:Name="Bienvenido" Content="¡Bienvenido a la simulacion!" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0                ,67,0,0"/>
-        <Label x:Name="LabelNombreMall" Content="Ingrese nombre del Mall" HorizontalAlignment="Left" Margin="25,67,0,0" VerticalAlignment="Top" Width="230" VerticalContentAlignment="Center"/>
-        <Label x:Name="LabelHoraMall" Content="Ingrese horas de funcionamiento del Mall" HorizontalAlignment="Left" Margin="25,118,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LabelNombreMall" Content="Ingrese nombre del Mall" HorizontalAlignment="Left" Margin="25,67,0,0" VerticalAlignment="Top" Width="230" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="LabelHoraMall" Content="Ingrese horas de funcionamiento del Mall" HorizontalAlignment="Left" Margin="25,118,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <Button x:Name="CrearMall" Content="Crear Mall" HorizontalAlignment="Left" Height="32" Margin="56,214,0,0" VerticalAlignment="Top" Width="157" Click="CrearMall_Click" />
         <TextBox x:Name="TxtBoxNombreMall" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox x:Name="TxtBoxHorasMall" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="338,118,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -49,22 +54,20 @@
         <TextBox x:Name="TextBoxCantidadDeTiendasPorPiso" HorizontalAlignment="Left" Height="26" Margin="338,109,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="153"/>
         <Label x:Name="LabelPisoFinalizado" Content="SE LLENO EL PISO, FINALIZE" HorizontalAlignment="Left" Margin="85,121,0,0" VerticalAlignment="Top" Width="197"/>
         <Button x:Name="ButtonSimular" Content="SIMULAR!" HorizontalAlignment="Left" Margin="184,101,0,0" VerticalAlignment="Top" Width="149" Click="ButtonSimular_Click" Height="46"/>
-        <Button x:Name="MostrarReporte" Content="Mostrar reporte" HorizontalAlignment="Left" Margin="41,39,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="MostrarReporte_Click" HorizontalContentAlignment="Center"/>
-        <Button x:Name="GuardarSimulacion" Content="Guardar simulacion" HorizontalAlignment="Left" Margin="213,39,0,0" VerticalAlignment="Top" Width="106" Click="GuardarSimulacion_Click" Height="29" HorizontalContentAlignment="Center"/>
-        <Button x:Name="InformacionPorLocal" Content="Información Por Local" HorizontalAlignment="Center" Margin="317,38,0,0" VerticalAlignment="Top" Width="136" Click="InformacionPorLocal_Click" Height="27"/>
+        <Button x:Name="MostrarReporte" Content="Mostrar reporte" HorizontalAlignment="Left" Margin="25,39,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="MostrarReporte_Click"/>
+        <Button x:Name="GuardarSimulacion" Content="Guardar simulacion" HorizontalAlignment="Left" Margin="176,38,0,0" VerticalAlignment="Top" Width="106" Click="GuardarSimulacion_Click" Height="29"/>
+        <Button x:Name="InformacionPorLocal" Content="Información Por Local" HorizontalAlignment="Left" Margin="317,38,0,0" VerticalAlignment="Top" Width="136" Click="InformacionPorLocal_Click" Height="27"/>
         <Label x:Name="LabelSimulacionGuardada" Content="Simulacion guardada!" HorizontalAlignment="Left" Margin="176,0,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelSueldoProm" Content="Ingrese un sueldo Promedio para el Mall" HorizontalAlignment="Left" Margin="25,166,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-        <Button x:Name="Salir" Content="Salir de la simulación" Width="138" Margin="380,271,0,0" Height="33" Click="Salir_Click" HorizontalContentAlignment="Right" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+        <Button x:Name="Salir" Content="Salir de la simulacion" Width="138" Margin="380,271,0,0" Height="33" Click="Salir_Click"/>
         <ComboBox x:Name="TodosLosLocales" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="189,105,0,0" Height="18" />
         <Button x:Name="button" Content="Seleccionar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="226,184,0,0" Click="button_Click"/>
         <Button x:Name="BotonVolver" Content="Volver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="25,271,0,0" Height="33" Click="Volver"/>
-        <TextBox x:Name="NombreArchivo" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="Nombre Archivo" VerticalAlignment="Top" Width="106" Margin="213,67,0,0" HorizontalContentAlignment="Center"/>
-        <ComboBox x:Name="CargarArchivos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="41,214,0,0" Height="18" />
-        <Label x:Name="LabelSeleccioneArchivo" Content="Si desea cargar, seleccione un archivo: " Margin="-1,185,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label x:Name="LabelAreaCompleta" Content="Area completa! Se ha añadido la tienda con el area máxima del piso." HorizontalAlignment="Left" Margin="14,304,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LabelAreaDisponible" Content="Label" HorizontalAlignment="Left" Margin="230,174,0,0" VerticalAlignment="Top" Width="79"/>
-
+        <TextBox x:Name="NombreArchivo" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="Nombre Archivo" VerticalAlignment="Top" Width="106" Margin="176,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="CargarArchivos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="90,223,0,0" Height="18" />
+        <Label x:Name="LabelSeleccioneArchivo" Content="Si desea cargar, seleccione un archivo: " HorizontalAlignment="Left" Margin="176,184,0,0" VerticalAlignment="Top"/>
     </Grid>
 
 
 </Window>
+
