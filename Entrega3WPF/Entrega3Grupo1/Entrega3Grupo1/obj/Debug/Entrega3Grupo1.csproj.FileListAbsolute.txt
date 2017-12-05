@@ -1,16 +1,17 @@
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\bin\Debug\Entrega3Grupo1.exe.config
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\bin\Debug\Entrega3Grupo1.exe
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\bin\Debug\Entrega3Grupo1.pdb
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.csprojResolveAssemblyReference.cache
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\MainWindow.g.cs
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\App.g.cs
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1_MarkupCompile.cache
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1_MarkupCompile.lref
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\MainWindow.baml
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.g.resources
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.Properties.Resources.resources
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.csproj.GenerateResource.Cache
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.exe
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.pdb
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\VentanaTiendasReporte.g.cs
-C:\Users\Juanma\Source\Repos\grupo_12\Entrega3WPF\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\VentanaTiendasReporte.baml
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\bin\Debug\Entrega3Grupo1.exe.config
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\bin\Debug\Entrega3Grupo1.exe
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\bin\Debug\Entrega3Grupo1.pdb
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.csprojResolveAssemblyReference.cache
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\MainWindow.g.cs
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\VentanaTiendasReporte.g.cs
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\App.g.cs
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1_MarkupCompile.cache
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1_MarkupCompile.lref
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\MainWindow.baml
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\VentanaTiendasReporte.baml
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.g.resources
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.Properties.Resources.resources
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.csproj.GenerateResource.Cache
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.csproj.CoreCompileInputs.cache
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.exe
+C:\Users\Roberto Cruz\Desktop\Entrega3Grupo1\Entrega3Grupo1\obj\Debug\Entrega3Grupo1.pdb

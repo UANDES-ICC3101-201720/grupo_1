@@ -1,100 +1,78 @@
 Simulacion del dia: 1
 La cantidad de clientes del dia 1 fue de 0
 La cantidad de clientes promedio hasta el dia 1 es de0
-La ganancia del dia1 fue de -2895
-La ganancia promedio hasta el dia 1 es de -2895
+La ganancia del dia1 fue de -123
+La ganancia promedio hasta el dia 1 es de -123
 La tienda con mas clientes en el dia 1 fue 
-La tienda con menos clientes en el dia 1 fue wef
-La tienda con mas ganancias en el dia 1 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 1 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 1 fue Nombre negocio
+La tienda con mas ganancias en el dia 1 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 1 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 2
 La cantidad de clientes del dia 2 fue de 0
 La cantidad de clientes promedio hasta el dia 2 es de0
-La ganancia del dia2 fue de -2895
-La ganancia promedio hasta el dia 2 es de -2895
+La ganancia del dia2 fue de -123
+La ganancia promedio hasta el dia 2 es de -123
 La tienda con mas clientes en el dia 2 fue 
-La tienda con menos clientes en el dia 2 fue wef
-La tienda con mas ganancias en el dia 2 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 2 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 2 fue Nombre negocio
+La tienda con mas ganancias en el dia 2 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 2 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 3
 La cantidad de clientes del dia 3 fue de 0
 La cantidad de clientes promedio hasta el dia 3 es de0
-La ganancia del dia3 fue de -2895
-La ganancia promedio hasta el dia 3 es de -2895
+La ganancia del dia3 fue de -123
+La ganancia promedio hasta el dia 3 es de -123
 La tienda con mas clientes en el dia 3 fue 
-La tienda con menos clientes en el dia 3 fue wef
-La tienda con mas ganancias en el dia 3 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 3 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 3 fue Nombre negocio
+La tienda con mas ganancias en el dia 3 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 3 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 4
 La cantidad de clientes del dia 4 fue de 0
 La cantidad de clientes promedio hasta el dia 4 es de0
-La ganancia del dia4 fue de -2895
-La ganancia promedio hasta el dia 4 es de -2895
+La ganancia del dia4 fue de -123
+La ganancia promedio hasta el dia 4 es de -123
 La tienda con mas clientes en el dia 4 fue 
-La tienda con menos clientes en el dia 4 fue wef
-La tienda con mas ganancias en el dia 4 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 4 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 4 fue Nombre negocio
+La tienda con mas ganancias en el dia 4 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 4 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 5
 La cantidad de clientes del dia 5 fue de 0
 La cantidad de clientes promedio hasta el dia 5 es de0
-La ganancia del dia5 fue de -2895
-La ganancia promedio hasta el dia 5 es de -2895
+La ganancia del dia5 fue de -123
+La ganancia promedio hasta el dia 5 es de -123
 La tienda con mas clientes en el dia 5 fue 
-La tienda con menos clientes en el dia 5 fue wef
-La tienda con mas ganancias en el dia 5 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 5 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 5 fue Nombre negocio
+La tienda con mas ganancias en el dia 5 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 5 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 6
 La cantidad de clientes del dia 6 fue de 0
 La cantidad de clientes promedio hasta el dia 6 es de0
-La ganancia del dia6 fue de -2895
-La ganancia promedio hasta el dia 6 es de -2895
+La ganancia del dia6 fue de -123
+La ganancia promedio hasta el dia 6 es de -123
 La tienda con mas clientes en el dia 6 fue 
-La tienda con menos clientes en el dia 6 fue wef
-La tienda con mas ganancias en el dia 6 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 6 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 6 fue Nombre negocio
+La tienda con mas ganancias en el dia 6 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 6 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 7
 La cantidad de clientes del dia 7 fue de 0
 La cantidad de clientes promedio hasta el dia 7 es de0
-La ganancia del dia7 fue de -2895
-La ganancia promedio hasta el dia 7 es de -2895
+La ganancia del dia7 fue de -123
+La ganancia promedio hasta el dia 7 es de -123
 La tienda con mas clientes en el dia 7 fue 
-La tienda con menos clientes en el dia 7 fue wef
-La tienda con mas ganancias en el dia 7 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 7 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 7 fue Nombre negocio
+La tienda con mas ganancias en el dia 7 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 7 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 8
 La cantidad de clientes del dia 8 fue de 0
 La cantidad de clientes promedio hasta el dia 8 es de0
-La ganancia del dia8 fue de -2895
-La ganancia promedio hasta el dia 8 es de -2895
+La ganancia del dia8 fue de -123
+La ganancia promedio hasta el dia 8 es de -123
 La tienda con mas clientes en el dia 8 fue 
-La tienda con menos clientes en el dia 8 fue wef
-La tienda con mas ganancias en el dia 8 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 8 fue wefcon una ganancia de -2895
+La tienda con menos clientes en el dia 8 fue Nombre negocio
+La tienda con mas ganancias en el dia 8 fue Nombre negocio con una ganancia de -123
+La tienda con menos ganancias en el dia 8 fue Nombre negociocon una ganancia de -123
 Simulacion del dia: 9
 La cantidad de clientes del dia 9 fue de 0
 La cantidad de clientes promedio hasta el dia 9 es de0
-La ganancia del dia9 fue de -2895
-La ganancia promedio hasta el dia 9 es de -2895
-La tienda con mas clientes en el dia 9 fue 
-La tienda con menos clientes en el dia 9 fue wef
-La tienda con mas ganancias en el dia 9 fue wef con una ganancia de -2895
-La tienda con menos ganancias en el dia 9 fue wefcon una ganancia de -2895
-Simulacion del dia:de -60
-Simulacion del dia: 9
-La cantidad de clientes del dia 9 fue de 16
-La cantidad de clientes promedio hasta el dia 9 es de15
-La ganancia del dia 9 fue de -120
-La ganancia promedio hasta el dia 9 es de -130
-La tienda con mas clientes en el dia 9 fue Juanma y asociados
-La tienda con menos clientes en el dia 9 fue Juanma y asociados
-La tienda con mas ganancias en el dia 9 fue Juanma y asociados con una ganancia de -60
-La tienda con menos ganancias en el dia 9 fue Juanma y asociadoscon una ganancia de -60
-Simulacion del dia: 10
-La cantidad de clientes del dia 10 fue de 16
-La cantidad de clientes promedio hasta el dia 10 es de15
-La ganancia del dia 10 fue de -120
-La ganancia promedio hasta el dia 10 es de -129
-La tienda con mas clientes en el dia 10 fue Juanma y asociados
-La tienda con menos clientes en el dia 10 fue Juanma y asociados
-La tienda con mas ganancias en el dia 10 fue Juanma y asociados con una ganancia de -60
-La tienda con menos ganancias en el dia 10 fue Juanma y asociadoscon un
+La ganancia del dia9 fue de -123
+La ganancia promedio hasta el dia 9 es de -123
+La tienda con mas clientes en el di

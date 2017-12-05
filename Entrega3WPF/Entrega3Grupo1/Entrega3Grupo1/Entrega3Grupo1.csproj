@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BBF60F4D-34AD-468D-B25D-9AF31C1CE0E5}</ProjectGuid>
+    <ProjectGuid>{9659E6A7-D75A-4AC4-A082-D3B38CA70A24}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Entrega3Grupo1</RootNamespace>
     <AssemblyName>Entrega3Grupo1</AssemblyName>

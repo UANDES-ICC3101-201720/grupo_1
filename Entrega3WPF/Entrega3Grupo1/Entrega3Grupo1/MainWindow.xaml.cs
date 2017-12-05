@@ -874,7 +874,9 @@ namespace Entrega3Grupo1
             NombreArchivo.Visibility = Visibility.Hidden;
             ButonCargar.Visibility = Visibility.Hidden;
             CargarArchivos.Visibility = Visibility.Hidden;
-            
+            LabelSeleccioneArchivo.Visibility = Visibility.Hidden;
+
+
         }
 
       
