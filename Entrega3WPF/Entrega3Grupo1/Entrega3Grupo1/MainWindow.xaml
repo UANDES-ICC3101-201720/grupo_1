@@ -21,6 +21,7 @@
     </Window.Resources>
 
     <Grid>
+        <Rectangle x:Name="Fondopantalla" Fill="#FFF4F4F5" Margin="0,0,0.2,0" Stroke="Black"/>
         <TextBox x:Name="InformeLocal" HorizontalAlignment="Left" Height="271" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="518" Margin="5,0,0,0" />
         <TextBox x:Name="Reporte" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="256" Width="508"/>
         <Button x:Name="Inicio" Content="Inicio" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="Inicio_Click" />
@@ -65,6 +66,7 @@
         <Button x:Name="BotonVolver" Content="Volver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="25,271,0,0" Height="33" Click="Volver"/>
         <TextBox x:Name="NombreArchivo" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="Nombre Archivo" VerticalAlignment="Top" Width="106" Margin="176,67,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="CargarArchivos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="90,223,0,0" Height="18" />
+        <Label x:Name="LabelAreaCompleta" Content="Area completa! Se ha añadido la tienda con el area máxima del piso." HorizontalAlignment="Left" Margin="14,304,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelSeleccioneArchivo" Content="Si desea cargar, seleccione un archivo: " HorizontalAlignment="Left" Margin="176,184,0,0" VerticalAlignment="Top"/>
     </Grid>
 

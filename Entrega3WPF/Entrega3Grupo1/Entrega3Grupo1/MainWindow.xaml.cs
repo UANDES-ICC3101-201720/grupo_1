@@ -75,7 +75,6 @@ namespace Entrega3Grupo1
             }
 
             LabelAreaCompleta.Visibility = Visibility.Hidden;
-            LabelAreaDisponible.Visibility = Visibility.Hidden;
             LabelSeleccioneArchivo.Visibility = Visibility.Visible;
             BotonVolver.Visibility = Visibility.Hidden;
             Bienvenido.Visibility = Visibility.Visible;
@@ -380,15 +379,12 @@ namespace Entrega3Grupo1
         private void BotonAgregarNegocio_Click(object sender, RoutedEventArgs e)
         {
             Piso actual = pisoSobreNivel.Last();
-            LabelAreaDisponible.Visibility = Visibility.Visible;
-            LabelAreaDisponible.Content = "Area disponible: " + (actual.areaPiso - actual.areaUsada);            
             int clientesDeDia = 0;
             int clientesDelDiaAnterior = 0;
             int tiendasUsadas = actual.tiendasUsadas;
             int tiendasdisponibles = actual.cantidadTiendas;
             if (tiendasdisponibles == actual.tiendasUsadas)
             {
-                LabelAreaDisponible.Visibility = Visibility.Hidden;
                 LabelPisoFinalizado.Visibility = Visibility.Hidden;
                 NombreNegocio.Visibility = Visibility.Hidden;
                 PrecioMax.Visibility = Visibility.Hidden;
@@ -463,7 +459,6 @@ namespace Entrega3Grupo1
             MostrarReporte.Visibility = Visibility.Hidden;
             if (actual.areaPiso <= actual.areaUsada)
             {
-                LabelAreaDisponible.Visibility = Visibility.Hidden;
                 todosLosNegocios.Remove(negocioAcutal);
                 negocios.Remove(negocioAcutal);
                 todosLosNegocios.Add(new Negocio(nombre, actual.areaUsada - actual.areaPiso, actual.numeroPiso, valArriendo, pMin, pMax, stock, canEmpl, cat, subCat, clientesDelDiaAnterior, clientesDeDia, gananciastotales));
@@ -496,7 +491,6 @@ namespace Entrega3Grupo1
                 GuardarSimulacion.Visibility = Visibility.Hidden;
                 LabelSimulacionGuardada.Visibility = Visibility.Hidden;
                 MostrarReporte.Visibility = Visibility.Hidden;
-                LabelAreaDisponible.Visibility = Visibility.Hidden;
             }
 
 
@@ -507,7 +501,6 @@ namespace Entrega3Grupo1
 
         private void ButtonSimular_Click(object sender, RoutedEventArgs e)
         {
-            LabelAreaDisponible.Visibility = Visibility.Hidden;
             List<string> reporteCompleto = new List<string>();
             FileStream fs = new FileStream("Reporte.txt", FileMode.OpenOrCreate);
             StreamWriter fw = new StreamWriter(fs);
