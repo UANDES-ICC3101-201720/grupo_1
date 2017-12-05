@@ -12,11 +12,15 @@
         <Style TargetType="Button">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="13"></Setter>
                     <Setter Property="BorderThickness" Value="3"></Setter>
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="false">
                 </Trigger>
             </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
         </Style>
     </Window.Resources>
 
